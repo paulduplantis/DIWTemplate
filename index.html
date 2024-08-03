@@ -130,25 +130,55 @@
 
     <section class="carousel-section">
         <div class="carousel-container">
-            <h2>Latest from Roman History Podcast</h2>
+            <h2>News Feed</h2>
             <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-podcasts">
-                    <!-- Podcast items will be dynamically inserted here -->
+                <div class="carousel-inner" id="carousel-inner-news">
+                    <!-- News feed items will be dynamically inserted here -->
                 </div>
             </div>
             <div class="carousel-controls">
-                <button id="prevBtnPodcasts">&#10094;</button>
-                <button id="nextBtnPodcasts">&#10095;</button>
+                <button id="prevBtnNews">&#10094;</button>
+                <button id="nextBtnNews">&#10095;</button>
             </div>
         </div>
     </section>
 
     <section class="carousel-section">
         <div class="carousel-container">
-            <h2>Roman History Books</h2>
+            <h2>Audio Feed</h2>
+            <div class="carousel">
+                <div class="carousel-inner" id="carousel-inner-audio">
+                    <!-- Audio feed items will be dynamically inserted here -->
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button id="prevBtnAudio">&#10094;</button>
+                <button id="nextBtnAudio">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <h2>Video Feed</h2>
+            <div class="carousel">
+                <div class="carousel-inner" id="carousel-inner-video">
+                    <!-- Video feed items will be dynamically inserted here -->
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button id="prevBtnVideo">&#10094;</button>
+                <button id="nextBtnVideo">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <h2>Book Feed</h2>
             <div class="carousel">
                 <div class="carousel-inner" id="carousel-inner-books">
-                    <!-- Book items will be dynamically inserted here -->
+                    <!-- Book feed items will be dynamically inserted here -->
                 </div>
             </div>
             <div class="carousel-controls">
@@ -172,9 +202,9 @@
     const podcastFeedUrl = 'https://historyofrome.libsyn.com/rss';
     const excludedPodcastTitle = 'The Storm Before The Storm: Chapter 1- The Beasts of Italy';
 
-    async function fetchPodcasts() {
+    async function fetchFeed(feedUrl, containerId, excludedTitle) {
         try {
-            const response = await fetch(podcastFeedUrl);
+            const response = await fetch(feedUrl);
             if (!response.ok) {
                 console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
                 return;
@@ -183,11 +213,11 @@
             const parser = new DOMParser();
             const xml = parser.parseFromString(text, 'application/xml');
             let items = Array.from(xml.querySelectorAll('item'));
-            
+
             // Reverse the items to show oldest first
             items.reverse();
-            
-            const carouselInnerPodcasts = document.getElementById('carousel-inner-podcasts');
+
+            const carouselInner = document.getElementById(containerId);
 
             if (items.length === 0) {
                 console.warn('No RSS feed items found.');
@@ -196,7 +226,7 @@
 
             items.forEach(item => {
                 const title = item.querySelector('title').textContent;
-                if (title === excludedPodcastTitle) {
+                if (title === excludedTitle) {
                     return; // Skip this item
                 }
                 const link = item.querySelector('link').textContent;
@@ -215,38 +245,37 @@
                         </div>
                     </div>
                 `;
-                carouselInnerPodcasts.appendChild(carouselItem);
+                carouselInner.appendChild(carouselItem);
             });
         } catch (error) {
             console.error('Error fetching or parsing RSS feed:', error);
         }
     }
 
-    function setupPodcastCarousel() {
-        const carouselInnerPodcasts = document.getElementById('carousel-inner-podcasts');
-        const prevBtnPodcasts = document.getElementById('prevBtnPodcasts');
-        const nextBtnPodcasts = document.getElementById('nextBtnPodcasts');
+    function setupCarousel(containerId, prevBtnId, nextBtnId) {
+        const carouselInner = document.getElementById(containerId);
+        const prevBtn = document.getElementById(prevBtnId);
+        const nextBtn = document.getElementById(nextBtnId);
         let index = 0;
 
-        function showPodcastSlide(i) {
-            const items = document.querySelectorAll('#carousel-inner-podcasts .carousel-item');
+        function showSlide(i) {
+            const items = document.querySelectorAll(`#${containerId} .carousel-item`);
             if (i >= items.length) index = 0;
             if (i < 0) index = items.length - 1;
-            carouselInnerPodcasts.style.transform = `translateX(${-index * 300}px)`;
+            carouselInner.style.transform = `translateX(${-index * 300}px)`;
         }
 
-        prevBtnPodcasts.addEventListener('click', () => {
+        prevBtn.addEventListener('click', () => {
             index--;
-            showPodcastSlide(index);
+            showSlide(index);
         });
 
-        nextBtnPodcasts.addEventListener('click', () => {
+        nextBtn.addEventListener('click', () => {
             index++;
-            showPodcastSlide(index);
+            showSlide(index);
         });
     }
 
-    // Example array of book data
     const books = [
         {
             title: 'SPQR: A History of Ancient Rome',
@@ -280,35 +309,16 @@
         });
     }
 
-    function setupBookCarousel() {
-        const carouselInnerBooks = document.getElementById('carousel-inner-books');
-        const prevBtnBooks = document.getElementById('prevBtnBooks');
-        const nextBtnBooks = document.getElementById('nextBtnBooks');
-        let index = 0;
-
-        function showBookSlide(i) {
-            const items = document.querySelectorAll('#carousel-inner-books .carousel-item');
-            if (i >= items.length) index = 0;
-            if (i < 0) index = items.length - 1;
-            carouselInnerBooks.style.transform = `translateX(${-index * 300}px)`;
-        }
-
-        prevBtnBooks.addEventListener('click', () => {
-            index--;
-            showBookSlide(index);
-        });
-
-        nextBtnBooks.addEventListener('click', () => {
-            index++;
-            showBookSlide(index);
-        });
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
-        fetchPodcasts();
-        setupPodcastCarousel();
+        fetchFeed(podcastFeedUrl, 'carousel-inner-news', excludedPodcastTitle);
+        fetchFeed(podcastFeedUrl, 'carousel-inner-audio', excludedPodcastTitle);
+        fetchFeed(podcastFeedUrl, 'carousel-inner-video', excludedPodcastTitle);
         loadBooks();
-        setupBookCarousel();
+
+        setupCarousel('carousel-inner-news', 'prevBtnNews', 'nextBtnNews');
+        setupCarousel('carousel-inner-audio', 'prevBtnAudio', 'nextBtnAudio');
+        setupCarousel('carousel-inner-video', 'prevBtnVideo', 'nextBtnVideo');
+        setupCarousel('carousel-inner-books', 'prevBtnBooks', 'nextBtnBooks');
     });
 </script>
 
