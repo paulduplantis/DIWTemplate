@@ -86,24 +86,6 @@
             min-width: 300px;
             box-sizing: border-box;
         }
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            pointer-events: none;
-        }
-        .carousel-controls button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            pointer-events: all;
-            z-index: 1;
-        }
         footer {
             background-color: #fff; /* Change footer background to white */
             color: #000; /* Change footer text to black */
@@ -133,10 +115,6 @@
                     <!-- News feed items will be dynamically inserted here -->
                 </div>
             </div>
-            <div class="carousel-controls">
-                <button id="prevBtnNews">&#10094;</button>
-                <button id="nextBtnNews">&#10095;</button>
-            </div>
         </div>
     </section>
 
@@ -147,10 +125,6 @@
                 <div class="carousel-inner" id="carousel-inner-audio">
                     <!-- Audio feed items will be dynamically inserted here -->
                 </div>
-            </div>
-            <div class="carousel-controls">
-                <button id="prevBtnAudio">&#10094;</button>
-                <button id="nextBtnAudio">&#10095;</button>
             </div>
         </div>
     </section>
@@ -163,10 +137,6 @@
                     <!-- Video feed items will be dynamically inserted here -->
                 </div>
             </div>
-            <div class="carousel-controls">
-                <button id="prevBtnVideo">&#10094;</button>
-                <button id="nextBtnVideo">&#10095;</button>
-            </div>
         </div>
     </section>
 
@@ -177,10 +147,6 @@
                 <div class="carousel-inner" id="carousel-inner-books">
                     <!-- Book feed items will be dynamically inserted here -->
                 </div>
-            </div>
-            <div class="carousel-controls">
-                <button id="prevBtnBooks">&#10094;</button>
-                <button id="nextBtnBooks">&#10095;</button>
             </div>
         </div>
     </section>
@@ -245,10 +211,8 @@
         }
     }
 
-    function setupCarousel(containerId, prevBtnId, nextBtnId) {
+    function setupCarousel(containerId) {
         const carouselInner = document.getElementById(containerId);
-        const prevBtn = document.getElementById(prevBtnId);
-        const nextBtn = document.getElementById(nextBtnId);
         let index = 0;
 
         function showSlide(i) {
@@ -257,16 +221,6 @@
             if (i < 0) index = items.length - 1;
             carouselInner.style.transform = `translateX(${-index * 300}px)`;
         }
-
-        prevBtn.addEventListener('click', () => {
-            index--;
-            showSlide(index);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            index++;
-            showSlide(index);
-        });
     }
 
     const books = [
@@ -306,11 +260,6 @@
         fetchFeed(podcastFeedUrl, 'carousel-inner-audio', excludedPodcastTitle);
         fetchFeed(podcastFeedUrl, 'carousel-inner-video', excludedPodcastTitle);
         loadBooks();
-
-        setupCarousel('carousel-inner-news', 'prevBtnNews', 'nextBtnNews');
-        setupCarousel('carousel-inner-audio', 'prevBtnAudio', 'nextBtnAudio');
-        setupCarousel('carousel-inner-video', 'prevBtnVideo', 'nextBtnVideo');
-        setupCarousel('carousel-inner-books', 'prevBtnBooks', 'nextBtnBooks');
     });
 </script>
 
