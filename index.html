@@ -48,29 +48,23 @@
         }
         .carousel-item {
             background-color: #fff;
-            border: 1px solid #ddd;
             border-radius: 5px;
             margin-bottom: 20px;
             padding: 15px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             flex-shrink: 0;
             width: 300px;
-            height: 250px; /* Set a fixed height */
+            height: auto; /* Adjust height as needed */
             box-sizing: border-box;
             overflow: hidden; /* Ensure content doesn't overflow */
-        }
-        .carousel-item img {
-            max-width: 100px;
-            max-height: 100px;
-            margin-right: 10px;
         }
         .carousel-item h3 {
             margin: 0;
             font-size: 1.1em;
         }
         .carousel-item p {
-            flex-grow: 1;
             margin: 10px 0 0;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -193,9 +187,10 @@
 </main>
 
 <footer>
-    <p>Contact us at: info@theemergence.io</p>
+    <p>Contact us at: info@ancientromanhistory.com</p>
     <p>Follow us on:
-           <a href="twitter-link">Twitter</a> |
+        <a href="facebook-link">Facebook</a> |
+        <a href="twitter-link">Twitter</a> |
         <a href="instagram-link">Instagram</a>
     </p>
 </footer>
@@ -233,18 +228,14 @@
                 }
                 const link = item.querySelector('link').textContent;
                 const description = item.querySelector('description').textContent;
-                const imageUrl = item.querySelector('itunes\\:image') ? item.querySelector('itunes\\:image').getAttribute('href') : 'link-to-default-image.jpg';
 
                 const carouselItem = document.createElement('div');
                 carouselItem.classList.add('carousel-item');
                 carouselItem.innerHTML = `
                     <div class="rss-item">
-                        <img src="${imageUrl}" alt="${title}">
-                        <div>
-                            <h3>${title}</h3>
-                            <p>${description}</p>
-                            <a href="${link}" target="_blank">Listen Now</a>
-                        </div>
+                        <h3>${title}</h3>
+                        <p>${description}</p>
+                        <a href="${link}" target="_blank">Listen Now</a>
                     </div>
                 `;
                 carouselInner.appendChild(carouselItem);
@@ -300,7 +291,6 @@
             const carouselItem = document.createElement('div');
             carouselItem.classList.add('carousel-item');
             carouselItem.innerHTML = `
-                <img src="${book.imageUrl}" alt="${book.title}">
                 <div>
                     <h3>${book.title}</h3>
                     <p>${book.author}</p>
