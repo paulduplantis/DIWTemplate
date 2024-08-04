@@ -3,37 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIWTemplate</title>
+    <title>Deep Inquiry Pilot</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff; /* Change background to white */
-            color: #000; /* Change text color to black */
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #fff; /* Change header background to white */
-            color: #000; /* Change header text to black */
+            background-color: #333;
+            color: #fff;
             padding: 20px 0;
             text-align: center;
         }
         main {
             padding: 20px;
         }
-        .content-box {
-            background-color: #fff; /* Change content box background to white */
-            color: #000; /* Change content box text to black */
+        .chat-container {
+            background-color: #333; /* Black background */
+            color: #fff; /* White text */
             padding: 20px;
             text-align: center;
             margin-bottom: 20px;
             border-radius: 5px;
-            height: 150px; /* Adjust height as needed */
+            height: 350px; /* Adjusted height */
             box-sizing: border-box;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #ddd; /* Add border for better separation */
+            flex-direction: column;
+        }
+        .chat-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
         }
         .carousel-section {
             margin-bottom: 40px;
@@ -42,29 +51,35 @@
         .carousel-container {
             display: inline-block;
             text-align: left;
-            width: 75%; /* Set the container width to 75% */
+            width: 75%;
             overflow: hidden;
             position: relative;
         }
         .carousel-item {
             background-color: #fff;
+            border: 1px solid #ddd;
             border-radius: 5px;
             margin-bottom: 20px;
             padding: 15px;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             flex-shrink: 0;
             width: 300px;
-            height: auto; /* Adjust height as needed */
+            height: 250px;
             box-sizing: border-box;
-            overflow: hidden; /* Ensure content doesn't overflow */
+            overflow: hidden;
+        }
+        .carousel-item img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
         }
         .carousel-item h3 {
             margin: 0;
             font-size: 1.1em;
         }
         .carousel-item p {
+            flex-grow: 1;
             margin: 10px 0 0;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -72,10 +87,11 @@
         .carousel {
             width: 100%;
             max-width: 100%;
-            overflow-x: scroll; /* Ensure the scrollbar is visible */
+            overflow-x: scroll;
             white-space: nowrap;
             display: flex;
             position: relative;
+            scroll-behavior: smooth;
         }
         .carousel-inner {
             display: flex;
@@ -87,47 +103,33 @@
             box-sizing: border-box;
         }
         footer {
-            background-color: #fff; /* Change footer background to white */
-            color: #000; /* Change footer text to black */
+            background-color: #333;
+            color: #fff;
             padding: 20px 0;
             text-align: center;
-            border-top: 1px solid #ddd; /* Add border for better separation */
-        }
-        .chatgpt-box {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto 20px;
-            text-align: center;
-        }
-        .chatgpt-box img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>#keyword for site here</h1>
-    <p>Discover Audio, Video, News, and Book or ask ChatGPT</p>
+    <h1>Welcome to Deep Inquiry Pilot</h1>
+    <p>Your ultimate resource for deep inquiry</p>
 </header>
 
 <main>
-    <div class="content-box">
-        <div class="chatgpt-box">
-            <a href="https://chatgpt.com" class="chat-link" style="color: #000; text-decoration: none; font-size: 1.5em;" target="_blank">
-                <img src="path/to/your/image.png" alt="ChatGPT Invite">
-            </a>
-        </div>
+    <div class="chat-container">
+        <h2>Ask ChatGPT:</h2>
+        <p>"What is being done to minimize homelessness?"</p>
+        <a href="https://chatgpt.com" class="chat-link">Go to ChatGPT</a>
     </div>
 
     <section class="carousel-section">
         <div class="carousel-container">
-            <h2>News Feed</h2>
+            <h2>Latest from Roman History Podcast</h2>
             <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-news">
-                    <!-- News feed items will be dynamically inserted here -->
+                <div class="carousel-inner" id="carousel-inner-podcasts">
+                    <!-- Podcast items will be dynamically inserted here -->
                 </div>
             </div>
         </div>
@@ -135,32 +137,10 @@
 
     <section class="carousel-section">
         <div class="carousel-container">
-            <h2>Audio Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-audio">
-                    <!-- Audio feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="carousel-section">
-        <div class="carousel-container">
-            <h2>Video Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-video">
-                    <!-- Video feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="carousel-section">
-        <div class="carousel-container">
-            <h2>Book Feed</h2>
+            <h2>Roman History Books</h2>
             <div class="carousel">
                 <div class="carousel-inner" id="carousel-inner-books">
-                    <!-- Book feed items will be dynamically inserted here -->
+                    <!-- Book items will be dynamically inserted here -->
                 </div>
             </div>
         </div>
@@ -168,18 +148,26 @@
 </main>
 
 <footer>
-    <p>To learn more about Deep Inquiry Websites, contact: info@themergence.io</p>
-    <p>To access the GitHub Repository to copy code to build your own Deep Inquiry website, visit <a href="https://github.com/paulduplantis/DIWTemplate" target="_blank">https://github.com/paulduplantis/DIWTemplate</a></p>
-    <p>Build and share to create a more resonant connection.</p>
+    <p>Contact us at: info@ancientromanhistory.com</p>
+    <p>Follow us on:
+        <a href="facebook-link">Facebook</a> |
+        <a href="twitter-link">Twitter</a> |
+        <a href="instagram-link">Instagram</a>
+    </p>
 </footer>
 
 <script>
     const podcastFeedUrl = 'https://historyofrome.libsyn.com/rss';
     const excludedPodcastTitle = 'The Storm Before The Storm: Chapter 1- The Beasts of Italy';
 
-    async function fetchFeed(feedUrl, containerId, excludedTitle) {
+    // Function to replace broken images with a default image
+    function handleImageError(event) {
+        event.target.src = 'https://raw.githubusercontent.com/paulduplantis/Roman-History-DI-Website/Deep-Inquiry-Websites/Roman%20History%20Books%20Thumbnail.png';
+    }
+
+    async function fetchPodcasts() {
         try {
-            const response = await fetch(feedUrl);
+            const response = await fetch(podcastFeedUrl);
             if (!response.ok) {
                 console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
                 return;
@@ -192,7 +180,7 @@
             // Reverse the items to show oldest first
             items.reverse();
 
-            const carouselInner = document.getElementById(containerId);
+            const carouselInnerPodcasts = document.getElementById('carousel-inner-podcasts');
 
             if (items.length === 0) {
                 console.warn('No RSS feed items found.');
@@ -201,51 +189,44 @@
 
             items.forEach(item => {
                 const title = item.querySelector('title').textContent;
-                if (title === excludedTitle) {
+                if (title === excludedPodcastTitle) {
                     return; // Skip this item
                 }
                 const link = item.querySelector('link').textContent;
                 const description = item.querySelector('description').textContent;
+                const imageUrl = 'https://raw.githubusercontent.com/paulduplantis/Roman-History-DI-Website/Deep-Inquiry-Websites/Roman%20History%20Podcast%20Thumbnail.png';
 
                 const carouselItem = document.createElement('div');
                 carouselItem.classList.add('carousel-item');
                 carouselItem.innerHTML = `
                     <div class="rss-item">
-                        <h3>${title}</h3>
-                        <p>${description}</p>
-                        <a href="${link}" target="_blank">Listen Now</a>
+                        <img src="${imageUrl}" alt="${title}" onerror="handleImageError(event)">
+                        <div>
+                            <h3>${title}</h3>
+                            <p>${description}</p>
+                            <a href="${link}" target="_blank">Listen Now</a>
+                        </div>
                     </div>
                 `;
-                carouselInner.appendChild(carouselItem);
+                carouselInnerPodcasts.appendChild(carouselItem);
             });
         } catch (error) {
             console.error('Error fetching or parsing RSS feed:', error);
         }
     }
 
-    function setupCarousel(containerId) {
-        const carouselInner = document.getElementById(containerId);
-        let index = 0;
-
-        function showSlide(i) {
-            const items = document.querySelectorAll(`#${containerId} .carousel-item`);
-            if (i >= items.length) index = 0;
-            if (i < 0) index = items.length - 1;
-            carouselInner.style.transform = `translateX(${-index * 300}px)`;
-        }
-    }
-
+    // Example array of book data
     const books = [
         {
             title: 'SPQR: A History of Ancient Rome',
             author: 'Mary Beard',
-            imageUrl: 'https://m.media-amazon.com/images/I/51DNaiWfllL.jpg',
+            imageUrl: 'https://raw.githubusercontent.com/paulduplantis/Roman-History-DI-Website/Deep-Inquiry-Websites/Roman%20History%20Books%20Thumbnail.png',
             link: 'https://www.amazon.com/dp/0670024870'
         },
         {
             title: 'The History of Rome',
             author: 'Livy',
-            imageUrl: 'https://m.media-amazon.com/images/I/41NGZX9G4ZL._SX326_BO1,204,203,200_.jpg',
+            imageUrl: 'https://raw.githubusercontent.com/paulduplantis/Roman-History-DI-Website/Deep-Inquiry-Websites/Roman%20History%20Books%20Thumbnail.png',
             link: 'https://www.amazon.com/dp/0140448098'
         },
         // Add more book data as needed
@@ -257,6 +238,7 @@
             const carouselItem = document.createElement('div');
             carouselItem.classList.add('carousel-item');
             carouselItem.innerHTML = `
+                <img src="${book.imageUrl}" alt="${book.title}" onerror="handleImageError(event)">
                 <div>
                     <h3>${book.title}</h3>
                     <p>${book.author}</p>
@@ -268,9 +250,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        fetchFeed(podcastFeedUrl, 'carousel-inner-news', excludedPodcastTitle);
-        fetchFeed(podcastFeedUrl, 'carousel-inner-audio', excludedPodcastTitle);
-        fetchFeed(podcastFeedUrl, 'carousel-inner-video', excludedPodcastTitle);
+        fetchPodcasts();
         loadBooks();
     });
 </script>
