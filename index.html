@@ -21,17 +21,30 @@
         header h1 {
             font-size: 2em; /* Example header font size */
         }
+        .share-icons {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .share-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .share-icons img {
+            width: 30px;
+            height: 30px;
+        }
         main {
             padding: 20px;
         }
         .content-box {
             background-color: #fff; /* Change content box background to white */
             color: #000; /* Change content box text to black */
-            padding: 40px 20px; /* Add more padding to the top and bottom */
+            padding: 40px 20px 60px 20px; /* Add more padding to the top and bottom */
             text-align: center;
             margin-bottom: 20px;
             border-radius: 5px;
-            height: 250px; /* Adjust height as needed */
+            height: auto; /* Adjust height as needed */
             box-sizing: border-box;
             display: flex;
             align-items: center;
@@ -41,7 +54,7 @@
         }
         .content-box h2 {
             font-size: 2em; /* Match the header font size */
-            margin-bottom: 10px; /* Add space below the h2 */
+            margin-bottom: 20px; /* Add space below the h2 */
         }
         .carousel-section {
             margin-bottom: 40px;
@@ -119,7 +132,22 @@
 
 <header>
     <h1>#How to Minimize Homelessness</h1>
-    <p>Discover Audio, Video, News, and Books or ask ChatGPT about minizing homelessness</p>
+    <p>Discover Audio, Video, News, and Books or ask ChatGPT about minimizing homelessness</p>
+    <div class="share-icons">
+        <span>Share this seed of Deep Inquiry on:</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_URL" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://twitter.com/intent/tweet?text=YOUR_TEXT&url=YOUR_URL" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_X_%28social_network%29.svg" alt="X">
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=YOUR_URL" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
+        </a>
+        <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20YOUR_URL" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+        </a>
+    </div>
 </header>
 
 <main>
