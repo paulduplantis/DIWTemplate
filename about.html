@@ -34,6 +34,19 @@
             width: 30px;
             height: 30px;
         }
+        .subscribe-icons {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .subscribe-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .subscribe-icons img {
+            width: 30px;
+            height: 30px;
+        }
         main {
             padding: 20px;
         }
@@ -63,6 +76,14 @@
         .carousel-section {
             margin-bottom: 40px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the container */
+        }
+        .carousel-section img {
+            width: 30px; /* Size of the RSS icon */
+            height: 30px;
+            margin-right: 10px; /* Space between the icon and the title */
         }
         .carousel-container {
             display: inline-block;
@@ -135,23 +156,31 @@
 
 <header>
     <h1>#MinimizeHomelessness</h1>
-    <p>Discover Audio, Video, News, and Books or ask ChatGPT about minimizing homelessness</p>
     <div class="share-icons">
         <span>Share this seed of Deep Inquiry on:</span>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_URL" target="_blank">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
         </a>
-        <a href="https://twitter.com/intent/tweet?text=YOUR_TEXT&url=https://paulduplantis.github.io/DIWTemplate/index.html" target="_blank">
+        <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site&url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
             <img src="https://paulduplantis.github.io/DIWTemplate/x_logo.png" alt="X">
         </a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/index.html" target="_blank">
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
         </a>
-        <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/index.html" target="_blank">
+        <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
         </a>
-        <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/index.html" target="_blank">
+        <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
             <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
+        </a>
+    </div>
+    <div class="subscribe-icons">
+        <span>Subscribe by:</span>
+        <a href="http://www.testrssfeed.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
+        </a>
+        <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
         </a>
     </div>
 </header>
@@ -160,11 +189,12 @@
     <div class="content-box about-content-box">
         <h2>About</h2>
         <p>Prior to his current role, Ryan served as the Director of Sales - West at Computer Aided Technology, Inc., where he expanded the sales leadership role to include the Pacific Northwest region, leading a team of 10 outside sales executives. Under his leadership, territory revenues grew by 39%, and his team consistently surpassed net new revenue targets. Ryan's strategic use of Salesforce for customer insights and his dedication to training and development have solidified his reputation as a sales leader who drives performance and innovation. With a robust background in sales leadership, training, and development, and a keen focus on strategic planning and C-Level presentations, Ryan continues to push the status quo and achieve greater outcomes in the software sales industry.
-</p>
+        </p>
         <p><a href="index.html">Back to Home</a></p>
     </div>
 
     <section class="carousel-section">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
             <h2>News Feed</h2>
             <div class="carousel">
@@ -176,6 +206,7 @@
     </section>
 
     <section class="carousel-section">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
             <h2>Audio Feed</h2>
             <div class="carousel">
@@ -187,6 +218,7 @@
     </section>
 
     <section class="carousel-section">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
             <h2>Video Feed</h2>
             <div class="carousel">
@@ -198,6 +230,7 @@
     </section>
 
     <section class="carousel-section">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
             <h2>Book Feed</h2>
             <div class="carousel">
