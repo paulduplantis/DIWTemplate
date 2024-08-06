@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIWTemplate</title>
+    <title>About - DIWTemplate</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,13 +34,26 @@
             width: 30px;
             height: 30px;
         }
+        .subscribe-icons {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .subscribe-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .subscribe-icons img {
+            width: 30px;
+            height: 30px;
+        }
         main {
             padding: 20px;
         }
         .content-box {
             background-color: #fff; /* Change content box background to white */
             color: #000; /* Change content box text to black */
-            padding: 40px 20px; /* Add more padding to the top and bottom */
+            padding: 0px 20px; /* Add more padding to the top and bottom */
             text-align: center;
             margin-bottom: 20px;
             border-radius: 5px;
@@ -55,6 +68,10 @@
         .content-box h2 {
             font-size: 2em; /* Match the header font size */
             margin-bottom: 20px; /* Add space below the h2 */
+        }
+        .about-content-box { /* Specific class for About content box */
+            width: 80%; /* Set the width as needed */
+            margin: 0 auto; /* Center the box */
         }
         .carousel-section {
             margin-bottom: 40px;
@@ -139,6 +156,7 @@
 
 <header>
     <h1>#MinimizeHomelessness</h1>
+    <p>Discover Audio, Video, News, and Books or ask ChatGPT about minimizing homelessness</p>
     <div class="share-icons">
         <span>Share this seed of Deep Inquiry on:</span>
         <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
@@ -157,21 +175,27 @@
             <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
         </a>
     </div>
+    <div class="subscribe-icons">
+        <span>Subscribe by:</span>
+        <a href="http://www.testrssfeed.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
+        </a>
+        <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+        </a>
+    </div>
 </header>
 
 <main>
-    <div class="content-box">
-        <h2>Ask ChatGPT:</h2>
-        <p style="font-size: 2em;">"What is being done to minimize homelessness?"</p>
-        <div class="chatgpt-box">
-            <a href="https://chatgpt.com" class="chat-link" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo">
-            </a>
-        </div>
+    <div class="content-box about-content-box">
+        <h2>About</h2>
+        <p>Prior to his current role, Ryan served as the Director of Sales - West at Computer Aided Technology, Inc., where he expanded the sales leadership role to include the Pacific Northwest region, leading a team of 10 outside sales executives. Under his leadership, territory revenues grew by 39%, and his team consistently surpassed net new revenue targets. Ryan's strategic use of Salesforce for customer insights and his dedication to training and development have solidified his reputation as a sales leader who drives performance and innovation. With a robust background in sales leadership, training, and development, and a keen focus on strategic planning and C-Level presentations, Ryan continues to push the status quo and achieve greater outcomes in the software sales industry.
+        </p>
+        <p><a href="index.html">Back to Home</a></p>
     </div>
 
     <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
             <h2>News Feed</h2>
             <div class="carousel">
@@ -183,7 +207,7 @@
     </section>
 
     <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
             <h2>Audio Feed</h2>
             <div class="carousel">
@@ -195,7 +219,7 @@
     </section>
 
     <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
             <h2>Video Feed</h2>
             <div class="carousel">
@@ -207,7 +231,7 @@
     </section>
 
     <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
             <h2>Book Feed</h2>
             <div class="carousel">
@@ -223,7 +247,7 @@
     <p>To learn more about Deep Inquiry Websites, contact: info@themergence.io</p>
     <p>To access the GitHub Repository to copy code and build your own Deep Inquiry website, visit <a href="https://github.com/paulduplantis/DIWTemplate" target="_blank">https://github.com/paulduplantis/DIWTemplate</a></p>
     <p>Build and share to create a deeper human connection.</p>
-    <p><a href="https://paulduplantis.github.io/DIWTemplate/about.html">About</a></p>
+    <p><a href="about.html">About</a></p>
 </footer>
 
 <script>
@@ -263,7 +287,7 @@
                 const carouselItem = document.createElement('div');
                 carouselItem.classList.add('carousel-item');
                 carouselItem.innerHTML = `
-                    <div class="rss-content">
+                    <div class="rss-item">
                         <h3>${title}</h3>
                         <p>${description}</p>
                         <a href="${link}" target="_blank">Listen Now</a>
