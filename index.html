@@ -61,6 +61,7 @@
             text-align: center;
             display: flex;
             align-items: center;
+            justify-content: center; /* Center the container */
         }
         .carousel-section img {
             width: 30px; /* Size of the RSS icon */
@@ -263,15 +264,10 @@
                 const carouselItem = document.createElement('div');
                 carouselItem.classList.add('carousel-item');
                 carouselItem.innerHTML = `
-                    <div class="rss-item">
-                        <a href="www.testrssfeed.com" target="_blank" class="rss-icon">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Icon">
-                        </a>
-                        <div class="rss-content">
-                            <h3>${title}</h3>
-                            <p>${description}</p>
-                            <a href="${link}" target="_blank">Listen Now</a>
-                        </div>
+                    <div class="rss-content">
+                        <h3>${title}</h3>
+                        <p>${description}</p>
+                        <a href="${link}" target="_blank">Listen Now</a>
                     </div>
                 `;
                 carouselInner.appendChild(carouselItem);
