@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS Feed with Mental Health Messages</title>
+</head>
+<body>
+    <div id="news-feed"></div>
+
+    <script>
+        // Array of Mental Health Messages
+        const mentalHealthMessages = [
+            "Addiction Support Available",
+            "Coping with Depression",
+            "Managing Anxiety Effectively",
+            "Resources for PTSD",
+            "Overcoming Stress"
+        ];
+
+        async function fetchRSS(feedUrl) {
+            const response = await fetch(feedUrl);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, "application/xml");
+            return xml;
+        }
+
+        function insertMentalHealthMessages(items) {
+            const result = [];
+            let messageIndex = 0;
+
+            items.forEach((item, index) => {
+                result.push(item);
+                // Insert Mental Health Message every 5th item
+                if ((index + 1) % 5 === 0) {
+                    result.push(mentalHealthMessages[messageIndex]);
+                    messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
+                }
+            });
+
+            return result;
+        }
+
+        function renderFeed(items, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = ""; // Clear previous content
+
+            items.forEach(item => {
+                if (typeof item === "string") {
+                    // Render Mental Health Message
+                    const messageElement = document.createElement("div");
+                    messageElement.innerText = item;
+                    messageElement.style.fontWeight = "bold";
+                    container.appendChild(messageElement);
+                } else {
+                    // Render RSS Item
+                    const title = item.querySelector("title").textContent;
+                    const description = item.querySelector("description").textContent;
+                    const link = item.querySelector("link").textContent;
+
+                    const itemElement = document.createElement("div");
+                    itemElement.innerHTML = `<h3>${title}</h3><p>${description}</p><a href="${link}" target="_blank">Read more</a>`;
+                    container.appendChild(itemElement);
+                }
+            });
+        }
+
+        async function loadFeed() {
+            const feedUrl = 'https://historyofrome.libsyn.com/rss';
+            const rss = await fetchRSS(feedUrl);
+            const items = Array.from(rss.querySelectorAll("item"));
+            const itemsWithMessages = insertMentalHealthMessages(items);
+            renderFeed(itemsWithMessages, "news-feed");
+        }
+
+        loadFeed();
+    </script>
+</body>
+</html>
