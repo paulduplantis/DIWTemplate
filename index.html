@@ -94,7 +94,7 @@
             position: relative;
         }
 
-   .carousel-item {
+  .carousel-item {
     background-color: #fff;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -105,7 +105,7 @@
     align-items: flex-start;
     flex-shrink: 0;
     width: 300px;
-    height: auto; /* Adjust height as needed */
+    height: 200px; /* Set to a fixed height */
     box-sizing: border-box;
     overflow: hidden; /* Ensure content doesn't overflow */
     border: 1px solid #ddd; /* Add a light border around each item */
@@ -115,25 +115,27 @@
 .carousel-item .rss-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distributes space evenly between items */
-    height: 100%;
+    justify-content: space-between; /* Ensure space is distributed, with Read More at the bottom */
+    height: 100%; /* Make sure the container fills the entire height of the carousel item */
+    width: 100%; /* Make sure the container fills the entire width of the carousel item */
 }
 
 .carousel-item .rss-item h3 {
-    margin-bottom: 10px; /* Minimal space between title and description */
+    margin-bottom: 10px; /* Adjust space between the title and description */
 }
 
 .carousel-item .rss-item p {
     margin: 0;
+    flex-grow: 1; /* Allow the description to take up available space */
     overflow: hidden;
     text-overflow: ellipsis;
-    flex-grow: 1; /* Fills the space between title and Read More */
 }
 
 .carousel-item .rss-item a {
-    align-self: flex-start; /* Keeps the Read More link aligned to the left */
-    margin-top: 10px; /* Ensures there's some space above the link */
+    margin-top: 10px; /* Space between the description and Read More */
+    align-self: flex-start; /* Align the Read More link to the start (left) */
 }
+
 
         .carousel-item h3 {
             margin: 0;
