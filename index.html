@@ -4,7 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIWTemplate</title>
-
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* Change background to white */
+            color: #000; /* Change text color to black */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000; /* Change header background to white */
+            color: #fff; /* Change header text to black */
+            padding: 5px 5px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2em; /* Example header font size */
+        }
+        .share-icons {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .share-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .share-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        .subscribe-icons {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .subscribe-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .subscribe-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        main {
+            padding: 20px;
+        }
+        .content-box {
+            background-color: #fff; /* Change content box background to white */
+            color: #000; /* Change content box text to black */
+            padding: 0px 0px; /* Add more padding to the top and bottom */
+            text-align: center;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            height: auto; /* Adjust height as needed */
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd; /* Add border for better separation */
+            flex-direction: column;
+        }
+        .content-box h2 {
+            font-size: 2em; /* Match the header font size */
+            margin-bottom: 20px; /* Add space below the h2 */
+        }
+        .content-box p {
+            font-size: 2em;
+            margin-top: 10px; /* Reduce this value to decrease space */
+        }
+       
+        .carousel-section {
+            margin-bottom: 40px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the container */
+        }
+        .carousel-section img {
+            width: 30px; /* Size of the RSS icon */
+            height: 30px;
+            margin-right: 10px; /* Space between the icon and the title */
+        }
+        .carousel-container {
+            display: inline-block;
+            text-align: left;
+            width: 75%; /* Set the container width to 75% */
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-item {
+            background-color: #fff;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-shrink: 0;
+            width: 300px;
+            height: auto; /* Adjust height as needed */
+            box-sizing: border-box;
+            overflow: hidden; /* Ensure content doesn't overflow */
+        }
+        .carousel-item h3 {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .carousel-item p {
+            margin: 10px 0 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .carousel-item img,
+        #carousel-inner-news img {
+            display: none; /* Hide images in the carousel items and within the news feed */
+        }            
+        .carousel {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: scroll; /* Ensure the scrollbar is visible */
+            white-space: nowrap;
+            display: flex;
+            position: relative;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-item {
+            display: inline-block;
+            min-width: 300px;
+            box-sizing: border-box;
+        }
+        footer {
+            background-color: #fff; /* Change footer background to white */
+            color: #000; /* Change footer text to black */
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #ddd; /* Add border for better separation */
+        }
+        .chatgpt-box {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            text-align: center;
+        }
+        .chatgpt-box img {
+            max-width: 50px; /* Reduce the size by 50% */
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
 
