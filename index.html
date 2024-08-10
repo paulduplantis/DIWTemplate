@@ -252,75 +252,62 @@
     <p>Build and share to create a deeper human connection.</p>
     <p><a href="about.html">About</a></p>
 </footer>
+<script>
+    const podcastFeedUrl = 'https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml';
+    const excludedPodcastTitle = 'The Storm Before The Storm: Chapter 1- The Beasts of Italy';
 
- <script>
-        // Array of Mental Health Messages
-        const mentalHealthMessages = [
-            "Addiction Support Available",
-            "Coping with Depression",
-            "Managing Anxiety Effectively",
-            "Resources for PTSD",
-            "Overcoming Stress"
-        ];
-
-        async function fetchRSS(feedUrl) {
+    async function fetchFeed(feedUrl, containerId, excludedTitle) {
+        try {
             const response = await fetch(feedUrl);
+            if (!response.ok) {
+                console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
+                return;
+            }
             const text = await response.text();
             const parser = new DOMParser();
-            const xml = parser.parseFromString(text, "application/xml");
-            return xml;
-        }
+            const xml = parser.parseFromString(text, 'application/xml');
+            let items = Array.from(xml.querySelectorAll('item'));
 
-        function insertMentalHealthMessages(items) {
-            const result = [];
-            let messageIndex = 0;
+            // Reverse the items to show oldest first
+            items.reverse();
 
-            items.forEach((item, index) => {
-                result.push(item);
-                // Insert Mental Health Message every 5th item
-                if ((index + 1) % 5 === 0) {
-                    result.push(mentalHealthMessages[messageIndex]);
-                    messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
-                }
-            });
+            const carouselInner = document.getElementById(containerId);
 
-            return result;
-        }
-
-        function renderFeed(items, containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = ""; // Clear previous content
+            if (items.length === 0) {
+                console.warn('No RSS feed items found.');
+                return;
+            }
 
             items.forEach(item => {
-                if (typeof item === "string") {
-                    // Render Mental Health Message
-                    const messageElement = document.createElement("div");
-                    messageElement.innerText = item;
-                    messageElement.style.fontWeight = "bold";
-                    container.appendChild(messageElement);
-                } else {
-                    // Render RSS Item
-                    const title = item.querySelector("title").textContent;
-                    const description = item.querySelector("description").textContent;
-                    const link = item.querySelector("link").textContent;
-
-                    const itemElement = document.createElement("div");
-                    itemElement.innerHTML = `<h3>${title}</h3><p>${description}</p><a href="${link}" target="_blank">Read more</a>`;
-                    container.appendChild(itemElement);
+                const title = item.querySelector('title').textContent;
+                if (title === excludedTitle) {
+                    return; // Skip this item
                 }
+                const link = item.querySelector('link').textContent;
+                const description = item.querySelector('description').textContent;
+
+                const carouselItem = document.createElement('div');
+                carouselItem.classList.add('carousel-item');
+                carouselItem.innerHTML = `
+                    <div class="rss-item">
+                        <h3>${title}</h3>
+                        <p>${description}</p>
+                        <a href="${link}" target="_blank">Read More</a>
+                    </div>
+                `;
+                carouselInner.appendChild(carouselItem);
             });
+        } catch (error) {
+            console.error('Error fetching or parsing RSS feed:', error);
         }
+    }
 
-        async function loadFeed() {
-            const feedUrl = 'https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml';
-            const rss = await fetchRSS(feedUrl);
-            const items = Array.from(rss.querySelectorAll("item"));
-            const itemsWithMessages = insertMentalHealthMessages(items);
-            renderFeed(itemsWithMessages, "carousel-inner-news");
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchFeed(podcastFeedUrl, 'carousel-inner-news', excludedPodcastTitle);
+    });
+</script>
 
-        loadFeed();
-    </script>
+
 
 </body>
 </html>
