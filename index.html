@@ -119,18 +119,22 @@
 }
 
 .carousel-item .rss-item h3 {
-    margin: 0 0 5px 0; /* Minimal space between title and description */
+    margin-bottom: 5px; /* Minimal space between title and description */
 }
 
 .carousel-item .rss-item p {
     flex-grow: 1; /* Ensures the paragraph takes up the remaining space */
     margin: 0;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .carousel-item .rss-item a {
+    align-self: flex-start; /* Aligns the link to the left */
     margin-top: auto; /* Pushes the "Read More" link to the bottom */
-    align-self: flex-end; /* Aligns the link to the right */
 }
+
 
         .carousel-item h3 {
             margin: 0;
