@@ -67,7 +67,7 @@
         }
 
         async function loadFeed() {
-            const feedUrl = 'https://rss.app/rss-feed?keyword=how%20to%20fix%20homelessness&region=US&lang=en';
+            const feedUrl = 'https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml';
             const rss = await fetchRSS(feedUrl);
             const items = Array.from(rss.querySelectorAll("item"));
             const itemsWithMessages = insertMentalHealthMessages(items);
