@@ -114,15 +114,15 @@
 
 .carousel-item p {
     margin: 10px 0 0;
-    overflow: hidden; 
-    text-overflow: ellipsis;
+    overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Show up to 3 lines */
     -webkit-box-orient: vertical;
-    white-space: normal;
+    -webkit-line-clamp: 3; /* Show up to 3 lines */
+    line-height: 1.5em; /* Adjust line height if needed */
+    max-height: 4.5em; /* Control maximum height based on line-height */
+    height: auto; /* Ensure it expands to fit content */
 }
-
-     
+    
         .carousel {
             width: 100%;
             max-width: 100%;
