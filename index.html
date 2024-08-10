@@ -316,7 +316,7 @@
             const rss = await fetchRSS(feedUrl);
             const items = Array.from(rss.querySelectorAll("item"));
             const itemsWithMessages = insertMentalHealthMessages(items);
-            renderFeed(itemsWithMessages, "news-feed");
+            renderFeed(itemsWithMessages, "carousel-inner-news");
         }
 
         loadFeed();
