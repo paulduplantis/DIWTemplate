@@ -93,7 +93,7 @@
             overflow: hidden;
             position: relative;
         }
-     .carousel-item {
+  .carousel-item {
     background-color: #fff;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -106,6 +106,8 @@
     height: auto; /* Adjust height as needed */
     box-sizing: border-box;
     overflow: hidden; /* Ensure content doesn't overflow */
+    border: 1px solid #ddd; /* Add a light border around each item */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
         .carousel-item h3 {
             margin: 0;
@@ -115,12 +117,8 @@
 .carousel-item p {
     margin: 10px 0 0;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3; /* Show up to 3 lines */
-    line-height: 1.5em; /* Adjust line height if needed */
-    max-height: 4.5em; /* Control maximum height based on line-height */
-    height: auto; /* Ensure it expands to fit content */
+    text-overflow: ellipsis;
+    white-space: normal; /* Ensure text wraps */
 }
     
         .carousel {
