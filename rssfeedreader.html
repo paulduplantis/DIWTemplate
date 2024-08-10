@@ -67,7 +67,7 @@
         }
 
         async function loadFeed() {
-            const feedUrl = 'https://rss.app/feed/kD0zJrmZ9QVNPilZ';
+            const feedUrl = 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml';
             const rss = await fetchRSS(feedUrl);
             const items = Array.from(rss.querySelectorAll("item"));
             const itemsWithMessages = insertMentalHealthMessages(items);
