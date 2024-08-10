@@ -94,7 +94,7 @@
             position: relative;
         }
 
-     .carousel-item {
+   .carousel-item {
     background-color: #fff;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -102,7 +102,6 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures content stretches to fill space and "Read More" stays at the bottom */
     align-items: flex-start;
     flex-shrink: 0;
     width: 300px;
@@ -112,6 +111,22 @@
     border: 1px solid #ddd; /* Add a light border around each item */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
+
+.carousel-item .rss-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make the rss-item take full height of the carousel-item */
+}
+
+.carousel-item .rss-item p {
+    flex-grow: 1; /* Allow the paragraph to take up as much space as possible */
+    margin-bottom: 10px; /* Ensure some space between the description and the "Read More" link */
+}
+
+.carousel-item .rss-item a {
+    align-self: flex-end; /* Align the "Read More" link to the bottom */
+}
+
 
         .carousel-item h3 {
             margin: 0;
