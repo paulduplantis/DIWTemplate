@@ -286,12 +286,15 @@
                 const link = item.querySelector('link').textContent;
                 const description = item.querySelector('description').textContent;
 
+                // Removing image tags from description
+                const descriptionWithoutImages = description.replace(/<img[^>]*>/g, '');
+
                 const carouselItem = document.createElement('div');
                 carouselItem.classList.add('carousel-item');
                 carouselItem.innerHTML = `
                     <div class="rss-item">
                         <h3>${title}</h3>
-                        <p>${description}</p>
+                        <p>${descriptionWithoutImages}</p>
                         <a href="${link}" target="_blank">Read More</a>
                     </div>
                 `;
@@ -306,6 +309,7 @@
         fetchFeed(podcastFeedUrl, 'carousel-inner-news', excludedPodcastTitle);
     });
 </script>
+
 
 
 
