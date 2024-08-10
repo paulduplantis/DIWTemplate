@@ -103,6 +103,7 @@
             align-items: flex-start;
             flex-shrink: 0;
             width: 100px;
+            max-width: 100px; /* Ensure it doesn't expand beyond this */
             height: auto; /* Adjust height as needed */
             box-sizing: border-box;
             overflow: hidden; /* Ensure content doesn't overflow */
@@ -134,8 +135,8 @@
         }
         .carousel-item {
             display: inline-block;
-            min-width: 100px;
-            box-sizing: border-box;
+            min-width: 100px; /* Match this to the width you've set above */
+            max-width: 100px; /* Match this to the width you've set above */: border-box;
         }
         footer {
             background-color: #fff; /* Change footer background to white */
