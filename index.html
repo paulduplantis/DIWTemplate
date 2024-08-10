@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIWTemplate</title>
-<style>
+ <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #fff; /* Change background to white */
@@ -69,11 +69,11 @@
             font-size: 2em; /* Match the header font size */
             margin-bottom: 20px; /* Add space below the h2 */
         }
-        .content-box p {
-            font-size: 2em;
-            margin-top: 10px; /* Reduce this value to decrease space */
+        
+        .about-content-box { /* Specific class for About content box */
+            width: 80%; /* Set the width as needed */
+            margin: 0 auto; /* Center the box */
         }
-       
         .carousel-section {
             margin-bottom: 40px;
             text-align: center;
@@ -102,8 +102,7 @@
             flex-direction: column;
             align-items: flex-start;
             flex-shrink: 0;
-            width: 100px;
-            max-width: 100px; /* Ensure it doesn't expand beyond this */
+            width: 300px;
             height: auto; /* Adjust height as needed */
             box-sizing: border-box;
             overflow: hidden; /* Ensure content doesn't overflow */
@@ -117,10 +116,6 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .carousel-item img,
-        #carousel-inner-news img {
-            display: none; /* Hide images in the carousel items and within the news feed */
-        }            
         .carousel {
             width: 100%;
             max-width: 100%;
@@ -135,8 +130,8 @@
         }
         .carousel-item {
             display: inline-block;
-            min-width: 100px; /* Match this to the width you've set above */
-            max-width: 100px; /* Match this to the width you've set above */: border-box;
+            min-width: 300px;
+            box-sizing: border-box;
         }
         footer {
             background-color: #fff; /* Change footer background to white */
