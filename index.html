@@ -115,26 +115,26 @@
 .carousel-item .rss-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensure space is distributed, with Read More at the bottom */
-    height: 100%; /* Make sure the container fills the entire height of the carousel item */
-    width: 100%; /* Make sure the container fills the entire width of the carousel item */
+    justify-content: space-between; /* Distributes space evenly between items */
+    height: 100%;
 }
 
 .carousel-item .rss-item h3 {
-    margin-bottom: 10px; /* Adjust space between the title and description */
+    margin-bottom: 5px; /* Minimal space between title and description */
 }
 
 .carousel-item .rss-item p {
     margin: 0;
-    flex-grow: 1; /* Allow the description to take up available space */
     overflow: hidden;
     text-overflow: ellipsis;
+    flex-grow: 1; /* Fills the space between title and Read More */
 }
 
 .carousel-item .rss-item a {
-    margin-top: 10px; /* Space between the description and Read More */
-    align-self: flex-start; /* Align the Read More link to the start (left) */
+    align-self: flex-start; /* Keeps the Read More link aligned to the left */
+    margin-top: 10px; /* Ensures there's some space above the link */
 }
+
 
 
         .carousel-item h3 {
