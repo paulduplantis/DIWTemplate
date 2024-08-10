@@ -112,11 +112,15 @@
             margin: 0;
             font-size: 1.1em;
         }
-        .carousel-item p {
-            margin: 10px 0 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+       .carousel-item p {
+           margin: 10px 0 0;
+           overflow: hidden; /* Change to visible if you want to show all text */
+           text-overflow: ellipsis;
+           white-space: normal; /* Allow the text to wrap to the next line */
+           display: -webkit-box;
+          -webkit-line-clamp: none; /* Remove line clamping */
+          -webkit-box-orient: vertical;
+      }
         .carousel {
             width: 100%;
             max-width: 100%;
