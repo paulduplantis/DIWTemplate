@@ -115,6 +115,7 @@
 .carousel-item .rss-item {
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Distributes space evenly between items */
     height: 100%;
 }
 
@@ -123,18 +124,16 @@
 }
 
 .carousel-item .rss-item p {
-    flex-grow: 1; /* Ensures the paragraph takes up the remaining space */
     margin: 0;
-    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex-grow: 1; /* Fills the space between title and Read More */
 }
 
 .carousel-item .rss-item a {
-    align-self: flex-start; /* Aligns the link to the left */
-    margin-top: auto; /* Pushes the "Read More" link to the bottom */
+    align-self: flex-start; /* Keeps the Read More link aligned to the left */
+    margin-top: 10px; /* Ensures there's some space above the link */
 }
-
 
         .carousel-item h3 {
             margin: 0;
