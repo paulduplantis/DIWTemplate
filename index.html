@@ -112,19 +112,26 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
 
+.carousel-item .rss-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .carousel-item .rss-item h3 {
-    margin: 0 0 5px 0; /* Adjust the bottom margin to reduce space between the title and description */
+    margin: 0 0 5px 0; /* Minimal space between title and description */
 }
 
 .carousel-item .rss-item p {
-    flex-grow: 1;
-    margin: 0; /* Remove any margin that could be adding extra space */
+    flex-grow: 1; /* Ensures the paragraph takes up the remaining space */
+    margin: 0;
 }
 
 .carousel-item .rss-item a {
-    align-self: flex-end; 
-    margin-top: 10px; /* Ensure there's some space between the description and the "Read More" link */
+    margin-top: auto; /* Pushes the "Read More" link to the bottom */
+    align-self: flex-end; /* Aligns the link to the right */
 }
+
         .carousel-item h3 {
             margin: 0;
             font-size: 1.1em;
