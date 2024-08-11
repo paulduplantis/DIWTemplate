@@ -364,7 +364,17 @@
     document.addEventListener('DOMContentLoaded', () => {
         fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-news', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
     });
+
+    // Add custom CSS for the mental health message boxes
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .mental-health-message {
+            background-color: #f0f0f0; /* Light grey background */
+        }
+    `;
+    document.head.appendChild(style);
 </script>
+
 
 
 
