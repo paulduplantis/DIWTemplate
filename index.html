@@ -286,8 +286,13 @@
     <p><a href="about.html">About</a></p>
 </footer>
 <script>
-    const podcastFeedUrl = 'https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml';
-    const excludedPodcastTitle = 'The Storm Before The Storm: Chapter 1- The Beasts of Italy';
+    // Array of Mental Health Messages
+    const mentalHealthMessages = [
+        "Mental Health Support: Reach out to those in need",
+        "It's okay to ask for help: Resources available for Anxiety",
+        "Support your mental well-being: Tips for managing stress",
+        // Add more messages as needed
+    ];
 
     async function fetchFeed(feedUrl, containerId, excludedTitle) {
         try {
@@ -305,13 +310,31 @@
             items.reverse();
 
             const carouselInner = document.getElementById(containerId);
-
             if (items.length === 0) {
                 console.warn('No RSS feed items found.');
                 return;
             }
 
-            items.forEach(item => {
+            let messageIndex = 0;
+            items.forEach((item, index) => {
+                // Insert Mental Health Message every 3rd item
+                if (index > 0 && index % 3 === 0) {
+                    const message = mentalHealthMessages[messageIndex];
+                    const messageElement = document.createElement('div');
+                    messageElement.classList.add('carousel-item', 'mental-health-message');
+                    messageElement.innerHTML = `
+                        <div class="rss-item">
+                            <h3>Mental Health Message</h3>
+                            <p>${message}</p>
+                        </div>
+                    `;
+                    carouselInner.appendChild(messageElement);
+
+                    // Cycle through messages
+                    messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
+                }
+
+                // Normal RSS Feed Item
                 const title = item.querySelector('title').textContent;
                 if (title === excludedTitle) {
                     return; // Skip this item
@@ -339,9 +362,10 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        fetchFeed(podcastFeedUrl, 'carousel-inner-news', excludedPodcastTitle);
+        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-news', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
     });
 </script>
+
 
 
 
