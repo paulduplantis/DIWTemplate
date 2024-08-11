@@ -290,7 +290,7 @@
     const mentalHealthMessages = [
         {
             header: "DEPRESSION",
-            message: "How can depression lead to homelessnes? How can you find help for Depression? What are the symptoms of Depression? How can you help?"
+            message: "How can depression lead to homelessness? What are the common symptoms of depression? How can you get help with depression? How can you help in your community?"
         },
         {
             header: "Anxiety Resources",
@@ -330,7 +330,72 @@
                 if (index > 0 && index % 3 === 0) {
                     const message = mentalHealthMessages[messageIndex];
                     const messageElement = document.createElement('div');
-                    messageElement.classList.add('carousel-item', 'mental-health-message
+                    messageElement.classList.add('carousel-item', 'mental-health-message');
+                    messageElement.innerHTML = `
+                        <div class="rss-item">
+                            <h3>${message.header}</h3>
+                            <p>${message.message}</p>
+                        </div>
+                    `;
+                    carouselInner.appendChild(messageElement);
+
+                    // Cycle through messages
+                    messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
+                }
+
+                // Normal RSS Feed Item
+                const title = item.querySelector('title').textContent;
+                if (title === excludedTitle) {
+                    return; // Skip this item
+                }
+                const link = item.querySelector('link').textContent;
+                const description = item.querySelector('description').textContent;
+
+                // Removing image tags from description
+                const descriptionWithoutImages = description.replace(/<img[^>]*>/g, '');
+
+                const carouselItem = document.createElement('div');
+                carouselItem.classList.add('carousel-item');
+                carouselItem.innerHTML = `
+                    <div class="rss-item">
+                        <h3>${title}</h3>
+                        <p>${descriptionWithoutImages}</p>
+                        <a href="${link}" target="_blank">Read More</a>
+                    </div>
+                `;
+                carouselInner.appendChild(carouselItem);
+            });
+        } catch (error) {
+            console.error('Error fetching or parsing RSS feed:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-news', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
+    });
+
+    // Add custom CSS for the mental health message boxes
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .mental-health-message {
+            background-color: #f0f0f0; /* Light grey background */
+            color: #333; /* Darker text color */
+            font-family: Arial, sans-serif; /* Font style */
+            font-size: 1em; /* Font size */
+        }
+
+        .mental-health-message h3 {
+            font-size: 1.2em; /* Slightly larger font for the title */
+            color: #000; /* Title color */
+        }
+
+        .mental-health-message p {
+            font-size: 1em; /* Font size for the paragraph */
+            color: #333; /* Text color for the paragraph */
+        }
+    `;
+    document.head.appendChild(style);
+</script>
 
 </body>
 </html>
