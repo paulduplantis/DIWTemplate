@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIWTemplate</title>
- <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #fff; /* Change background to white */
@@ -94,61 +94,59 @@
             position: relative;
         }
 
-  .carousel-item {
-    background-color: #fff;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    margin-right: 15px; /* Add space between the boxes */
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-shrink: 0;
-    width: 300px;
-    height: auto; /* Adjust height as needed */
-    box-sizing: border-box;
-    overflow: hidden; /* Ensure content doesn't overflow */
-    border: 1px solid #ddd; /* Add a light border around each item */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-}
+        .carousel-item {
+            background-color: #fff;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            margin-right: 15px; /* Add space between the boxes */
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-shrink: 0;
+            width: 300px;
+            height: auto; /* Adjust height as needed */
+            box-sizing: border-box;
+            overflow: hidden; /* Ensure content doesn't overflow */
+            border: 1px solid #ddd; /* Add a light border around each item */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+        }
 
-.carousel-item .rss-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distributes space evenly between items */
-    height: 100%;
-}
+        .carousel-item .rss-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distributes space evenly between items */
+            height: 100%;
+        }
 
-.carousel-item .rss-item h3 {
-    margin-bottom: 5px; /* Minimal space between title and description */
-}
+        .carousel-item .rss-item h3 {
+            margin-bottom: 5px; /* Minimal space between title and description */
+        }
 
-.carousel-item .rss-item p {
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    flex-grow: 1; /* Fills the space between title and Read More */
-}
+        .carousel-item .rss-item p {
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-grow: 1; /* Fills the space between title and Read More */
+        }
 
-.carousel-item .rss-item a {
-    align-self: flex-start; /* Keeps the Read More link aligned to the left */
-    margin-top: 10px; /* Ensures there's some space above the link */
-}
-
-
+        .carousel-item .rss-item a {
+            align-self: flex-start; /* Keeps the Read More link aligned to the left */
+            margin-top: 10px; /* Ensures there's some space above the link */
+        }
 
         .carousel-item h3 {
             margin: 0;
             font-size: 1.1em;
         }
 
-.carousel-item p {
-    margin: 10px 0 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal; /* Ensure text wraps */
-}
-    
+        .carousel-item p {
+            margin: 10px 0 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal; /* Ensure text wraps */
+        }
+        
         .carousel {
             width: 100%;
             max-width: 100%;
@@ -183,6 +181,29 @@
             max-width: 50px; /* Reduce the size by 50% */
             height: auto;
             border-radius: 10px;
+        }
+
+        /* Custom CSS for the mental health message with background image */
+        .mental-health-message {
+            background: url('https://paulduplantis.github.io/DIWTemplate/Depression.png') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 1em;
+            padding: 15px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .mental-health-message h3 {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .mental-health-message p {
+            font-size: 1em;
+            color: #fff;
         }
     </style>
 </head>
@@ -237,42 +258,6 @@
             <div class="carousel">
                 <div class="carousel-inner" id="carousel-inner-news">
                     <!-- News feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>Audio Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-audio">
-                    <!-- Audio feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>Video Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-video">
-                    <!-- Video feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>Book Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-books">
-                    <!-- Book feed items will be dynamically inserted here -->
                 </div>
             </div>
         </div>
