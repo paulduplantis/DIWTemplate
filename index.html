@@ -13,94 +13,75 @@
             padding: 0;
         }
         header {
-            background-color: #668E95; /* Header background color */
-            color: #fff; /* Header text color */
-            padding: 10px 5px;
+            background-color: #668E95; /* Change header background to white */
+            color: #fff; /* Change header text to black */
+            padding: 5px 5px;
             text-align: center;
         }
         header h1 {
             font-size: 2em; /* Example header font size */
-            margin: 10px 0;
         }
-      nav {
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    nav ul {
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-    }
-
-    nav ul li {
-        display: inline-block;
-        margin-right: 15px;
-        position: relative; /* Needed for dropdown positioning */
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: #fff; /* White text color */
-        padding: 10px 15px;
-        display: block;
-    }
-
-    nav ul li:hover > a {
-        background-color: #556D73; /* Darken background on hover */
-        border-radius: 5px;
-    }
-
-    nav ul li ul {
-        display: none;
-        position: absolute;
-        background-color: #668E95;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        top: 35px; /* Position dropdown below the parent item */
-        left: 0;
-        width: 150px;
-        border-radius: 5px;
-    }
-
-    nav ul li:hover ul {
-        display: block; /* Show the dropdown menu on hover */
-    }
-
-    nav ul li ul li {
-        display: block;
-        margin: 0;
-    }
-
-    nav ul li ul li a {
-        padding: 10px 15px;
-    }
-
-    nav ul li ul li a:hover {
-        background-color: #556D73; /* Darken background on hover in dropdown */
-        border-radius: 5px;
-    }
-        .share-container {
-            background-color: #f0f0f0; /* Light grey background */
-            padding: 10px 0; /* 10px padding top and bottom */
-            text-align: center;
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            background-color: #668E95;
         }
-        .share-icons,
-        .subscribe-icons {
-            margin: 0 20px; /* Add space between Share and Subscribe sections */
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #668E95;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            top: 35px; /* Position dropdown below the parent item */
+            left: 0;
+            width: 150px;
+            border-radius: 5px;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul li ul li a {
+            padding: 10px;
+            color: #fff;
+        }
+        nav ul li ul li a:hover {
+            background-color: #55767E;
+        }
+        .share-icons {
+            margin-top: 10px;
             text-align: center;
         }
-        .share-icons a,
+        .share-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .share-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        .subscribe-icons {
+            margin-top: 10px;
+            text-align: center;
+        }
         .subscribe-icons a {
             margin: 0 10px;
             text-decoration: none;
             color: #000;
         }
-        .share-icons img,
         .subscribe-icons img {
             width: 30px;
             height: 30px;
@@ -127,7 +108,10 @@
             font-size: 2em; /* Match the header font size */
             margin-bottom: 20px; /* Add space below the h2 */
         }
-
+        .about-content-box { /* Specific class for About content box */
+            width: 80%; /* Set the width as needed */
+            margin: 0 auto; /* Center the box */
+        }
         .carousel-section {
             margin-bottom: 40px;
             text-align: center;
@@ -147,7 +131,6 @@
             overflow: hidden;
             position: relative;
         }
-
         .carousel-item {
             background-color: #fff;
             border-radius: 5px;
@@ -165,42 +148,35 @@
             border: 1px solid #ddd; /* Add a light border around each item */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
         }
-
         .carousel-item .rss-item {
             display: flex;
             flex-direction: column;
             justify-content: space-between; /* Distributes space evenly between items */
             height: 100%;
         }
-
         .carousel-item .rss-item h3 {
             margin-bottom: 5px; /* Minimal space between title and description */
         }
-
         .carousel-item .rss-item p {
             margin: 0;
             overflow: hidden;
             text-overflow: ellipsis;
             flex-grow: 1; /* Fills the space between title and Read More */
         }
-
         .carousel-item .rss-item a {
             align-self: flex-start; /* Keeps the Read More link aligned to the left */
             margin-top: 10px; /* Ensures there's some space above the link */
         }
-
         .carousel-item h3 {
             margin: 0;
             font-size: 1.1em;
         }
-
         .carousel-item p {
             margin: 10px 0 0;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: normal; /* Ensure text wraps */
         }
-
         .carousel {
             width: 100%;
             max-width: 100%;
@@ -218,9 +194,20 @@
             min-width: 300px;
             box-sizing: border-box;
         }
+        .text-container {
+            width: 75%; /* Matches the width of the carousel */
+            height: 2000px; /* Set the height to 2000px */
+            background-color: #f7f7f7; /* Light grey background for contrast */
+            color: #000; /* Text color */
+            margin: 20px auto; /* Center the container and add top/bottom margin */
+            padding: 20px; /* Add padding inside the container */
+            box-sizing: border-box; /* Include padding in the height/width */
+            border-radius: 5px; /* Optional: Add border radius */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+        }
         footer {
-            background-color: #668E95; /* Footer background color */
-            color: #fff; /* Footer text color */
+            background-color: #668E95; /* Change footer background to white */
+            color: #fff; /* Change footer text to black */
             padding: 20px 0;
             text-align: center;
             border-top: 1px solid #ddd; /* Add border for better separation */
@@ -288,9 +275,6 @@
             </li>
         </ul>
     </nav>
-</header>
-
-<div class="share-container">
     <div class="share-icons">
         <span>Share to Care!</span>
         <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
@@ -307,9 +291,7 @@
         </a>
         <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
             <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
-        </a>
-    </div>
-    <div class="subscribe-icons">
+        </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span>Subscribe to Learn</span>
         <a href="http://www.testrssfeed.com" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
@@ -318,7 +300,7 @@
             <img src="https://paulduplantis.github.io/DIWTemplate/email-subscription.png" alt="Email">
         </a>
     </div>
-</div>
+</header>
 
 <main>
     <div class="content-box">
@@ -332,7 +314,6 @@
         </div>
     </div>
 
-    <!-- News Feed -->
     <section class="carousel-section">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
@@ -345,20 +326,6 @@
         </div>
     </section>
 
-    <!-- Video Feed -->
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>Video Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-video">
-                    <!-- Video feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Audio Feed -->
     <section class="carousel-section">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
@@ -371,7 +338,18 @@
         </div>
     </section>
 
-    <!-- Book Feed -->
+    <section class="carousel-section">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
+        <div class="carousel-container">
+            <h2>Video Feed</h2>
+            <div class="carousel">
+                <div class="carousel-inner" id="carousel-inner-video">
+                    <!-- Video feed items will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="carousel-section">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
@@ -383,6 +361,13 @@
             </div>
         </div>
     </section>
+
+    <section class="text-container">
+        <p>Your text goes here. You can add more paragraphs, images, or other content as needed.</p>
+        <p>This container is 2000px tall and spans the same width as the carousel.</p>
+        <!-- Add more content as needed -->
+    </section>
+
 </main>
 
 <footer>
@@ -391,6 +376,7 @@
     <p>Build and share to inspire mental health awareness, access to resources, and volunteerism.</p>
     <p><a href="about.html">About</a></p>
 </footer>
+
 <script>
     // Array of Mental Health Messages with headers
     const mentalHealthMessages = [
@@ -478,9 +464,6 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-news', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-video', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-audio', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-books', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
     });
 
     // Add custom CSS for the mental health message boxes
