@@ -15,11 +15,64 @@
         header {
             background-color: #668E95; /* Header background color */
             color: #fff; /* Header text color */
-            padding: 5px 5px;
+            padding: 10px 5px;
             text-align: center;
         }
         header h1 {
             font-size: 2em; /* Example header font size */
+            margin: 10px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 5px 10px;
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #4d6f75;
+            border-radius: 5px;
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #668E95;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            top: 35px; /* Position dropdown below the parent item */
+            left: 0;
+            width: 150px;
+            border-radius: 5px;
+        }
+        nav ul li ul li {
+            width: 100%;
+            border-bottom: 1px solid #4d6f75;
+        }
+        nav ul li ul li a {
+            padding: 10px;
+            white-space: nowrap;
+        }
+        nav ul li ul li a:hover {
+            background-color: #4d6f75;
+        }
+        nav ul li:hover ul {
+            display: block;
         }
         .share-container {
             background-color: #f0f0f0; /* Light grey background */
@@ -205,7 +258,60 @@
 
 <header>
     <h1>Pathways for Mental Health / Minimize Homelessness</h1>
+    <nav>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <a href="#">Cause</a>
+                <ul>
+                    <li><a href="https://www.test.com">Depression</a></li>
+                    <li><a href="https://www.test.com">Anxiety</a></li>
+                    <li><a href="https://www.test.com">Mania</a></li>
+                    <li><a href="https://www.test.com">PTSD</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Effect</a>
+                <ul>
+                    <li><a href="https://www.test.com">Homelessness</a></li>
+                    <li><a href="https://www.test.com">Suicide</a></li>
+                    <li><a href="https://www.test.com">Violence</a></li>
+                    <li><a href="https://www.test.com">Addiction</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 </header>
+
+<div class="share-container">
+    <div class="share-icons">
+        <span>Share to Care!</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site&url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+            <img src="https://paulduplantis.github.io/DIWTemplate/x_logo.png" alt="X">
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
+        </a>
+        <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+            <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
+        </a>
+    </div>
+    <div class="subscribe-icons">
+        <span>Subscribe to Learn</span>
+        <a href="http://www.testrssfeed.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
+        </a>
+        <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
+            <img src="https://paulduplantis.github.io/DIWTemplate/email-subscription.png" alt="Email">
+        </a>
+    </div>
+</div>
 
 <main>
     <div class="content-box">
@@ -216,36 +322,6 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo">
             </a>
                <p style="font-size: 1em;">“Or come up with your own question if you are curious and engage with others to better understand the problem and learn of pathways to help”</p>
-        </div>
-    </div>
-
-    <div class="share-container">
-        <div class="share-icons">
-            <span>Share to Care!</span>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-            </a>
-            <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site&url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                <img src="https://paulduplantis.github.io/DIWTemplate/x_logo.png" alt="X">
-            </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
-            </a>
-            <a href="mailto:?subject=Deep Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
-            </a>
-            <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
-            </a>
-        </div>
-        <div class="subscribe-icons">
-            <span>Subscribe to Learn</span>
-            <a href="http://www.testrssfeed.com" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
-            </a>
-            <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
-                <img src="https://paulduplantis.github.io/DIWTemplate/email-subscription.png" alt="Email">
-            </a>
         </div>
     </div>
 
