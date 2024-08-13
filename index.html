@@ -4,255 +4,289 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIWTemplate</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff; /* Change background to white */
-            color: #000; /* Change text color to black */
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #668E95; /* Header background color */
-            color: #fff; /* Header text color */
-            padding: 10px 5px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2em; /* Example header font size */
-            margin: 10px 0;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin: 0 15px;
-            position: relative;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1em;
-            padding: 5px 10px;
-            display: block;
-        }
-        nav ul li a:hover {
-            background-color: #4d6f75;
-            border-radius: 5px;
-        }
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            background-color: #668E95;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            top: 35px; /* Position dropdown below the parent item */
-            left: 0;
-            width: 150px;
-            border-radius: 5px;
-        }
-        nav ul li ul li {
-            width: 100%;
-            border-bottom: 1px solid #4d6f75;
-        }
-        nav ul li ul li a {
-            padding: 10px;
-            white-space: nowrap;
-        }
-        nav ul li ul li a:hover {
-            background-color: #4d6f75;
-        }
-        nav ul li:hover ul {
-            display: block;
-        }
-        .share-container {
-            background-color: #f0f0f0; /* Light grey background */
-            padding: 10px 0; /* 10px padding top and bottom */
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .share-icons,
-        .subscribe-icons {
-            margin: 0 20px; /* Add space between Share and Subscribe sections */
-            text-align: center;
-        }
-        .share-icons a,
-        .subscribe-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #000;
-        }
-        .share-icons img,
-        .subscribe-icons img {
-            width: 30px;
-            height: 30px;
-        }
-        main {
-            padding: 20px;
-        }
-        .content-box {
-            background-color: #fff; /* Change content box background to white */
-            color: #000; /* Change content box text to black */
-            padding: 0px 0px; /* Add more padding to the top and bottom */
-            text-align: center;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            height: auto; /* Adjust height as needed */
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd; /* Add border for better separation */
-            flex-direction: column;
-        }
-        .content-box h2 {
-            font-size: 2em; /* Match the header font size */
-            margin-bottom: 20px; /* Add space below the h2 */
-        }
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff; /* Change background to white */
+        color: #000; /* Change text color to black */
+        margin: 0;
+        padding: 0;
+    }
 
-        .carousel-section {
-            margin-bottom: 40px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Center the container */
-        }
-        .carousel-section img {
-            width: 30px; /* Size of the RSS icon */
-            height: 30px;
-            margin-right: 10px; /* Space between the icon and the title */
-        }
-        .carousel-container {
-            display: inline-block;
-            text-align: left;
-            width: 75%; /* Set the container width to 75% */
-            overflow: hidden;
-            position: relative;
-        }
+    header {
+        background-color: #668E95; /* Change header background to custom color */
+        color: #fff; /* Change header text to white */
+        padding: 5px 5px;
+        text-align: center;
+    }
 
-        .carousel-item {
-            background-color: #fff;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            margin-right: 15px; /* Add space between the boxes */
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            flex-shrink: 0;
-            width: 300px;
-            height: auto; /* Adjust height as needed */
-            box-sizing: border-box;
-            overflow: hidden; /* Ensure content doesn't overflow */
-            border: 1px solid #ddd; /* Add a light border around each item */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-        }
+    header h1 {
+        font-size: 2em; /* Example header font size */
+        margin: 10px 0; /* Add margin for spacing */
+    }
 
-        .carousel-item .rss-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Distributes space evenly between items */
-            height: 100%;
-        }
+    .share-icons {
+        margin-top: 10px;
+        text-align: center;
+    }
 
-        .carousel-item .rss-item h3 {
-            margin-bottom: 5px; /* Minimal space between title and description */
-        }
+    .share-icons a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #000;
+    }
 
-        .carousel-item .rss-item p {
-            margin: 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            flex-grow: 1; /* Fills the space between title and Read More */
-        }
+    .share-icons img {
+        width: 30px;
+        height: 30px;
+    }
 
-        .carousel-item .rss-item a {
-            align-self: flex-start; /* Keeps the Read More link aligned to the left */
-            margin-top: 10px; /* Ensures there's some space above the link */
-        }
+    .subscribe-icons {
+        margin-top: 10px;
+        text-align: center;
+    }
 
-        .carousel-item h3 {
-            margin: 0;
-            font-size: 1.1em;
-        }
+    .subscribe-icons a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #000;
+    }
 
-        .carousel-item p {
-            margin: 10px 0 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: normal; /* Ensure text wraps */
-        }
+    .subscribe-icons img {
+        width: 30px;
+        height: 30px;
+    }
 
-        .carousel {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: scroll; /* Ensure the scrollbar is visible */
-            white-space: normal;
-            display: flex;
-            position: relative;
-        }
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .carousel-item {
-            display: inline-block;
-            min-width: 300px;
-            box-sizing: border-box;
-        }
-        footer {
-            background-color: #668E95; /* Footer background color */
-            color: #fff; /* Footer text color */
-            padding: 20px 0;
-            text-align: center;
-            border-top: 1px solid #ddd; /* Add border for better separation */
-        }
-        .chatgpt-box {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto 20px;
-            text-align: center;
-        }
-        .chatgpt-box img {
-            max-width: 50px; /* Reduce the size by 50% */
-            height: auto;
-            border-radius: 10px;
-        }
+    nav {
+        margin-top: 10px;
+        text-align: center;
+    }
 
-        /* Custom CSS for the mental health message with background image */
-        .mental-health-message {
-            background: url('https://paulduplantis.github.io/DIWTemplate/Depression.png') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            font-size: 1em;
-            padding: 15px;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
+    nav ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
 
-        .mental-health-message h3 {
-            font-size: 1.2em;
-            color: #fff;
-            margin-bottom: 10px;
-        }
+    nav ul li {
+        display: inline-block;
+        margin-right: 15px;
+        position: relative; /* Needed for dropdown positioning */
+    }
 
-        .mental-health-message p {
-            font-size: 1em;
-            color: #fff;
-        }
-    </style>
+    nav ul li a {
+        text-decoration: none;
+        color: #fff; /* White text color */
+        padding: 10px 15px;
+        display: block;
+    }
+
+    nav ul li:hover > a {
+        background-color: #556D73; /* Darken background on hover */
+        border-radius: 5px;
+    }
+
+    nav ul li ul {
+        display: none;
+        position: absolute;
+        background-color: #668E95;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        top: 35px; /* Position dropdown below the parent item */
+        left: 0;
+        width: 150px;
+        border-radius: 5px;
+    }
+
+    nav ul li:hover ul {
+        display: block; /* Show the dropdown menu on hover */
+    }
+
+    nav ul li ul li {
+        display: block;
+        margin: 0;
+    }
+
+    nav ul li ul li a {
+        padding: 10px 15px;
+    }
+
+    nav ul li ul li a:hover {
+        background-color: #556D73; /* Darken background on hover in dropdown */
+        border-radius: 5px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .content-box {
+        background-color: #fff; /* Change content box background to white */
+        color: #000; /* Change content box text to black */
+        padding: 0px 0px; /* Add more padding to the top and bottom */
+        text-align: center;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        height: auto; /* Adjust height as needed */
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ddd; /* Add border for better separation */
+        flex-direction: column;
+    }
+
+    .content-box h2 {
+        font-size: 2em; /* Match the header font size */
+        margin-bottom: 20px; /* Add space below the h2 */
+    }
+
+    .about-content-box { /* Specific class for About content box */
+        width: 80%; /* Set the width as needed */
+        margin: 0 auto; /* Center the box */
+    }
+
+    .carousel-section {
+        margin-bottom: 40px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the container */
+    }
+
+    .carousel-section img {
+        width: 30px; /* Size of the RSS icon */
+        height: 30px;
+        margin-right: 10px; /* Space between the icon and the title */
+    }
+
+    .carousel-container {
+        display: inline-block;
+        text-align: left;
+        width: 75%; /* Set the container width to 75% */
+        overflow: hidden;
+        position: relative;
+    }
+
+    .carousel-item {
+        background-color: #fff;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        margin-right: 15px; /* Add space between the boxes */
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-shrink: 0;
+        width: 300px;
+        height: auto; /* Adjust height as needed */
+        box-sizing: border-box;
+        overflow: hidden; /* Ensure content doesn't overflow */
+        border: 1px solid #ddd; /* Add a light border around each item */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    }
+
+    .carousel-item .rss-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distributes space evenly between items */
+        height: 100%;
+    }
+
+    .carousel-item .rss-item h3 {
+        margin-bottom: 5px; /* Minimal space between title and description */
+    }
+
+    .carousel-item .rss-item p {
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex-grow: 1; /* Fills the space between title and Read More */
+    }
+
+    .carousel-item .rss-item a {
+        align-self: flex-start; /* Keeps the Read More link aligned to the left */
+        margin-top: 10px; /* Ensures there's some space above the link */
+    }
+
+    .carousel-item h3 {
+        margin: 0;
+        font-size: 1.1em;
+    }
+
+    .carousel-item p {
+        margin: 10px 0 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal; /* Ensure text wraps */
+    }
+
+    .carousel {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: scroll; /* Ensure the scrollbar is visible */
+        white-space: normal;
+        display: flex;
+        position: relative;
+    }
+
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+        display: inline-block;
+        min-width: 300px;
+        box-sizing: border-box;
+    }
+
+    footer {
+        background-color: #668E95; /* Change footer background to custom color */
+        color: #fff; /* Change footer text to white */
+        padding: 20px 0;
+        text-align: center;
+        border-top: 1px solid #ddd; /* Add border for better separation */
+    }
+
+    .chatgpt-box {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+
+    .chatgpt-box img {
+        max-width: 50px; /* Reduce the size by 50% */
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* Custom CSS for the mental health message with background image */
+    .mental-health-message {
+        background: url('https://paulduplantis.github.io/DIWTemplate/Depression.png') no-repeat center center;
+        background-size: cover;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 1em;
+        padding: 15px;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .mental-health-message h3 {
+        font-size: 1.2em;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .mental-health-message p {
+        font-size: 1em;
+        color: #fff;
+    }
+</style>
+
 </head>
 <body>
 
