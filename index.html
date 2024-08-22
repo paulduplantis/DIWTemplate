@@ -22,65 +22,66 @@
             font-size: 2em; /* Example header font size */
             margin: 10px 0;
         }
-      nav {
-        margin-top: 10px;
-        text-align: center;
-    }
+        nav {
+            margin-top: 10px;
+            text-align: center;
+        }
 
-    nav ul {
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-    }
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
 
-    nav ul li {
-        display: inline-block;
-        margin-right: 15px;
-        position: relative; /* Needed for dropdown positioning */
-    }
+        nav ul li {
+            display: inline-block;
+            margin-right: 15px;
+            position: relative; /* Needed for dropdown positioning */
+        }
 
-    nav ul li a {
-        text-decoration: none;
-        color: #fff; /* White text color */
-        padding: 10px 15px;
-        display: block;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff; /* White text color */
+            padding: 10px 15px;
+            display: block;
+        }
 
-    nav ul li:hover > a {
-        background-color: #556D73; /* Darken background on hover */
-        border-radius: 5px;
-    }
+        nav ul li:hover > a {
+            background-color: #556D73; /* Darken background on hover */
+            border-radius: 5px;
+        }
 
-    nav ul li ul {
-        display: none;
-        position: absolute;
-        background-color: #668E95;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        top: 35px; /* Position dropdown below the parent item */
-        left: 0;
-        width: 150px;
-        border-radius: 5px;
-    }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #668E95;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            top: 35px; /* Position dropdown below the parent item */
+            left: 0;
+            width: 150px;
+            border-radius: 5px;
+        }
 
-    nav ul li:hover ul {
-        display: block; /* Show the dropdown menu on hover */
-    }
+        nav ul li:hover ul {
+            display: block; /* Show the dropdown menu on hover */
+        }
 
-    nav ul li ul li {
-        display: block;
-        margin: 0;
-    }
+        nav ul li ul li {
+            display: block;
+            margin: 0;
+        }
 
-    nav ul li ul li a {
-        padding: 10px 15px;
-    }
+        nav ul li ul li a {
+            padding: 10px 15px;
+        }
 
-    nav ul li ul li a:hover {
-        background-color: #556D73; /* Darken background on hover in dropdown */
-        border-radius: 5px;
-    }
+        nav ul li ul li a:hover {
+            background-color: #556D73; /* Darken background on hover in dropdown */
+            border-radius: 5px;
+        }
+
         .share-container {
             background-color: #f0f0f0; /* Light grey background */
             padding: 10px 0; /* 10px padding top and bottom */
@@ -259,19 +260,6 @@
             font-size: 1em;
             color: #fff;
         }
-
-        /* Custom CSS for the text container */
-        .text-container {
-            width: 75%; /* Matches the width of the carousel */
-            height: 2000px; /* Set the height to 2000px */
-            background-color: #f7f7f7; /* Light grey background for contrast */
-            color: #000; /* Text color */
-            margin: 20px auto; /* Center the container and add top/bottom margin */
-            padding: 20px; /* Add padding inside the container */
-            box-sizing: border-box; /* Include padding in the height/width */
-            border-radius: 5px; /* Optional: Add border radius */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-        }
     </style>
 </head>
 <body>
@@ -315,7 +303,7 @@
         <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
         </a>
-        <a href="mailto:?subject=Deep Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+        <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
         </a>
         <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
@@ -397,12 +385,13 @@
         </div>
     </section>
 
-    <!-- Text Container -->
+    <!-- Custom Text Container -->
     <section class="text-container">
         <p>Your text goes here. You can add more paragraphs, images, or other content as needed.</p>
         <p>This container is 2000px tall and spans the same width as the carousel.</p>
         <!-- Add more content as needed -->
     </section>
+
 </main>
 
 <footer>
@@ -411,9 +400,8 @@
     <p>Build and share to inspire mental health awareness, access to resources, and volunteerism.</p>
     <p><a href="about.html">About</a></p>
 </footer>
-<script>
-    
 
+<script>
     // Array of Mental Health Messages with headers
     const mentalHealthMessages = [
         {
@@ -431,7 +419,6 @@
         // Add more messages as needed
     ];
 
-    // Function to fetch RSS feed and insert items into the carousel
     async function fetchFeed(feedUrl, containerId, excludedTitle) {
         try {
             const response = await fetch(feedUrl);
@@ -499,12 +486,11 @@
         }
     }
 
-    // Fetching and displaying the feeds when the page is loaded
     document.addEventListener('DOMContentLoaded', () => {
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-news', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-video', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-audio', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-books', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
+        fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-news', '');
+        fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-video', '');
+        fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-audio', '');
+        fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-books', '');
     });
 
     // Add custom CSS for the mental health message boxes
@@ -529,7 +515,6 @@
     `;
     document.head.appendChild(style);
 </script>
-
 
 </body>
 </html>
