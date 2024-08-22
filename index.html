@@ -429,6 +429,7 @@
         // Add more messages as needed
     ];
 
+    // Function to fetch RSS feed and insert items into the carousel
     async function fetchFeed(feedUrl, containerId, excludedTitle) {
         try {
             const response = await fetch(feedUrl);
@@ -496,6 +497,7 @@
         }
     }
 
+    // Fetching and displaying the feeds when the page is loaded
     document.addEventListener('DOMContentLoaded', () => {
         fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-news', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
         fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-video', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
@@ -525,6 +527,7 @@
     `;
     document.head.appendChild(style);
 </script>
+
 
 </body>
 </html>
