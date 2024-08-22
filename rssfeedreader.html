@@ -67,7 +67,7 @@
         }
 
         async function loadFeed() {
-            const feedUrl = 'https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml';
+            const feedUrl = 'https://historyofrome.libsyn.com/rss';
             const rss = await fetchRSS(feedUrl);
             const items = Array.from(rss.querySelectorAll("item"));
             const itemsWithMessages = insertMentalHealthMessages(items);
