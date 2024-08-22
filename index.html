@@ -1,28 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIWTemplate</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff; /* Change background to white */
-            color: #000; /* Change text color to black */
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #668E95; /* Header background color */
-            color: #fff; /* Header text color */
-            padding: 10px 5px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2em; /* Example header font size */
-            margin: 10px 0;
-        }
-      nav {
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff; /* Change background to white */
+        color: #000; /* Change text color to black */
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #668E95; /* Change header background to custom color */
+        color: #fff; /* Change header text to white */
+        padding: 5px 5px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 2em; /* Example header font size */
+        margin: 10px 0; /* Add margin for spacing */
+    }
+
+    .share-icons {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .share-icons a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .share-icons img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .subscribe-icons {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .subscribe-icons a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .subscribe-icons img {
+        width: 30px;
+        height: 30px;
+    }
+
+    nav {
         margin-top: 10px;
         text-align: center;
     }
@@ -81,450 +110,173 @@
         background-color: #556D73; /* Darken background on hover in dropdown */
         border-radius: 5px;
     }
-        .share-container {
-            background-color: #f0f0f0; /* Light grey background */
-            padding: 10px 0; /* 10px padding top and bottom */
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .share-icons,
-        .subscribe-icons {
-            margin: 0 20px; /* Add space between Share and Subscribe sections */
-            text-align: center;
-        }
-        .share-icons a,
-        .subscribe-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #000;
-        }
-        .share-icons img,
-        .subscribe-icons img {
-            width: 30px;
-            height: 30px;
-        }
-        main {
-            padding: 20px;
-        }
-        .content-box {
-            background-color: #fff; /* Change content box background to white */
-            color: #000; /* Change content box text to black */
-            padding: 0px 0px; /* Add more padding to the top and bottom */
-            text-align: center;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            height: auto; /* Adjust height as needed */
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd; /* Add border for better separation */
-            flex-direction: column;
-        }
-        .content-box h2 {
-            font-size: 2em; /* Match the header font size */
-            margin-bottom: 20px; /* Add space below the h2 */
-        }
 
-        .carousel-section {
-            margin-bottom: 40px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Center the container */
-        }
-        .carousel-section img {
-            width: 30px; /* Size of the RSS icon */
-            height: 30px;
-            margin-right: 10px; /* Space between the icon and the title */
-        }
-        .carousel-container {
-            display: inline-block;
-            text-align: left;
-            width: 75%; /* Set the container width to 75% */
-            overflow: hidden;
-            position: relative;
-        }
-
-        .carousel-item {
-            background-color: #fff;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            margin-right: 15px; /* Add space between the boxes */
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            flex-shrink: 0;
-            width: 300px;
-            height: auto; /* Adjust height as needed */
-            box-sizing: border-box;
-            overflow: hidden; /* Ensure content doesn't overflow */
-            border: 1px solid #ddd; /* Add a light border around each item */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-        }
-
-        .carousel-item .rss-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Distributes space evenly between items */
-            height: 100%;
-        }
-
-        .carousel-item .rss-item h3 {
-            margin-bottom: 5px; /* Minimal space between title and description */
-        }
-
-        .carousel-item .rss-item p {
-            margin: 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            flex-grow: 1; /* Fills the space between title and Read More */
-        }
-
-        .carousel-item .rss-item a {
-            align-self: flex-start; /* Keeps the Read More link aligned to the left */
-            margin-top: 10px; /* Ensures there's some space above the link */
-        }
-
-        .carousel-item h3 {
-            margin: 0;
-            font-size: 1.1em;
-        }
-
-        .carousel-item p {
-            margin: 10px 0 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: normal; /* Ensure text wraps */
-        }
-
-        .carousel {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: scroll; /* Ensure the scrollbar is visible */
-            white-space: normal;
-            display: flex;
-            position: relative;
-        }
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .carousel-item {
-            display: inline-block;
-            min-width: 300px;
-            box-sizing: border-box;
-        }
-        footer {
-            background-color: #668E95; /* Footer background color */
-            color: #fff; /* Footer text color */
-            padding: 20px 0;
-            text-align: center;
-            border-top: 1px solid #ddd; /* Add border for better separation */
-        }
-        .chatgpt-box {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto 20px;
-            text-align: center;
-        }
-        .chatgpt-box img {
-            max-width: 50px; /* Reduce the size by 50% */
-            height: auto;
-            border-radius: 10px;
-        }
-
-        /* Custom CSS for the mental health message with background image */
-        .mental-health-message {
-            background: url('https://paulduplantis.github.io/DIWTemplate/Depression.png') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            font-size: 1em;
-            padding: 15px;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .mental-health-message h3 {
-            font-size: 1.2em;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .mental-health-message p {
-            font-size: 1em;
-            color: #fff;
-        }
-
-        /* Custom CSS for the text container */
-        .text-container {
-            width: 75%; /* Matches the width of the carousel */
-            height: 2000px; /* Set the height to 2000px */
-            background-color: #f7f7f7; /* Light grey background for contrast */
-            color: #000; /* Text color */
-            margin: 20px auto; /* Center the container and add top/bottom margin */
-            padding: 20px; /* Add padding inside the container */
-            box-sizing: border-box; /* Include padding in the height/width */
-            border-radius: 5px; /* Optional: Add border radius */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Pathways for Mental Health / Minimize Homelessness</h1>
-    <nav>
-        <ul>
-            <li><a href="about.html">About</a></li>
-            <li>
-                <a href="#">Cause</a>
-                <ul>
-                    <li><a href="https://www.test.com">Depression</a></li>
-                    <li><a href="https://www.test.com">Anxiety</a></li>
-                    <li><a href="https://www.test.com">Mania</a></li>
-                    <li><a href="https://www.test.com">PTSD</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Effect</a>
-                <ul>
-                    <li><a href="https://www.test.com">Homelessness</a></li>
-                    <li><a href="https://www.test.com">Suicide</a></li>
-                    <li><a href="https://www.test.com">Violence</a></li>
-                    <li><a href="https://www.test.com">Addiction</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
-
-<div class="share-container">
-    <div class="share-icons">
-        <span>Share to Care!</span>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-        </a>
-        <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site&url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-            <img src="https://paulduplantis.github.io/DIWTemplate/x_logo.png" alt="X">
-        </a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
-        </a>
-        <a href="mailto:?subject=Deep Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
-        </a>
-        <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-            <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
-        </a>
-    </div>
-    <div class="subscribe-icons">
-        <span>Subscribe to Learn</span>
-        <a href="http://www.testrssfeed.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
-        </a>
-        <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
-            <img src="https://paulduplantis.github.io/DIWTemplate/email-subscription.png" alt="Email">
-        </a>
-    </div>
-</div>
-
-<main>
-    <div class="content-box">
-        <h2>Ask ChatGPT:</h2>
-        <p style="font-size: 2em;">"What is being done to minimize homelessness?"</p>
-        <div class="chatgpt-box">
-            <a href="https://chatgpt.com" class="chat-link" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo">
-            </a>
-            <p style="font-size: 1em;">“Or come up with your own question if you are curious and engage with others to better understand the problem and learn of pathways to help”</p>
-        </div>
-    </div>
-
-    <!-- News Feed -->
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>News Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-news">
-                    <!-- News feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Feed -->
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>Video Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-video">
-                    <!-- Video feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Audio Feed -->
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>Audio Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-audio">
-                    <!-- Audio feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Book Feed -->
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>Book Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-books">
-                    <!-- Book feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Text Container -->
-    <section class="text-container">
-        <p>Your text goes here. You can add more paragraphs, images, or other content as needed.</p>
-        <p>This container is 2000px tall and spans the same width as the carousel.</p>
-        <!-- Add more content as needed -->
-    </section>
-</main>
-
-<footer>
-    <p>To help with funding to promote this message to the St. Augustine, Florida community, contact: paulduplantis@gmail.com</p>
-    <p>To access the GitHub Repository to copy code and extend this message, visit <a href="https://github.com/paulduplantis/DIWTemplate" target="_blank">https://github.com/paulduplantis/DIWTemplate</a></p>
-    <p>Build and share to inspire mental health awareness, access to resources, and volunteerism.</p>
-    <p><a href="about.html">About</a></p>
-</footer>
-<script>
-    // Array of Mental Health Messages with headers
-    const mentalHealthMessages = [
-        {
-            header: "DEPRESSION",
-            message: "How can depression lead to homelessness? What are the common symptoms of depression? How can you get help with depression? How can you help in your community?"
-        },
-        {
-            header: "Anxiety Resources",
-            message: "It's okay to ask for help: Resources available for Anxiety"
-        },
-        {
-            header: "Stress Management",
-            message: "Support your mental well-being: Tips for managing stress"
-        },
-        // Add more messages as needed
-    ];
-
-    async function fetchFeed(feedUrl, containerId, excludedTitle) {
-        try {
-            const response = await fetch(feedUrl);
-            if (!response.ok) {
-                console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
-                return;
-            }
-            const text = await response.text();
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(text, 'application/xml');
-            let items = Array.from(xml.querySelectorAll('item'));
-
-            // Reverse the items to show oldest first
-            items.reverse();
-
-            const carouselInner = document.getElementById(containerId);
-            if (items.length === 0) {
-                console.warn('No RSS feed items found.');
-                return;
-            }
-
-            let messageIndex = 0;
-            items.forEach((item, index) => {
-                // Insert Mental Health Message every 3rd item
-                if (index > 0 && index % 3 === 0) {
-                    const message = mentalHealthMessages[messageIndex];
-                    const messageElement = document.createElement('div');
-                    messageElement.classList.add('carousel-item', 'mental-health-message');
-                    messageElement.innerHTML = `
-                        <div class="rss-item">
-                            <h3>${message.header}</h3>
-                            <p>${message.message}</p>
-                        </div>
-                    `;
-                    carouselInner.appendChild(messageElement);
-
-                    // Cycle through messages
-                    messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
-                }
-
-                // Normal RSS Feed Item
-                const title = item.querySelector('title').textContent;
-                if (title === excludedTitle) {
-                    return; // Skip this item
-                }
-                const link = item.querySelector('link').textContent;
-                const description = item.querySelector('description').textContent;
-
-                // Removing image tags from description
-                const descriptionWithoutImages = description.replace(/<img[^>]*>/g, '');
-
-                const carouselItem = document.createElement('div');
-                carouselItem.classList.add('carousel-item');
-                carouselItem.innerHTML = `
-                    <div class="rss-item">
-                        <h3>${title}</h3>
-                        <p>${descriptionWithoutImages}</p>
-                        <a href="${link}" target="_blank">Read More</a>
-                    </div>
-                `;
-                carouselInner.appendChild(carouselItem);
-            });
-        } catch (error) {
-            console.error('Error fetching or parsing RSS feed:', error);
-        }
+    main {
+        padding: 20px;
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-news', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-video', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-audio', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
-        fetchFeed('https://rss.app/feeds/t7XdGbL5yiqmUWzy.xml', 'carousel-inner-books', 'The Storm Before The Storm: Chapter 1- The Beasts of Italy');
-    });
+    .content-box {
+        background-color: #fff; /* Change content box background to white */
+        color: #000; /* Change content box text to black */
+        padding: 0px 0px; /* Add more padding to the top and bottom */
+        text-align: center;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        height: auto; /* Adjust height as needed */
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ddd; /* Add border for better separation */
+        flex-direction: column;
+    }
 
-    // Add custom CSS for the mental health message boxes
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .mental-health-message {
-            background-color: #000; /* Light grey background */
-            color: #333; /* Darker text color */
-            font-family: Arial, sans-serif; /* Font style */
-            font-size: 1em; /* Font size */
-        }
+    .content-box h2 {
+        font-size: 2em; /* Match the header font size */
+        margin-bottom: 20px; /* Add space below the h2 */
+    }
 
-        .mental-health-message h3 {
-            font-size: 1.2em; /* Slightly larger font for the title */
-            color: #fff; /* Title color */
-        }
+    .about-content-box { /* Specific class for About content box */
+        width: 80%; /* Set the width as needed */
+        margin: 0 auto; /* Center the box */
+    }
 
-        .mental-health-message p {
-            font-size: 1em; /* Font size for the paragraph */
-            color: #fff; /* Text color for the paragraph */
-        }
-    `;
-    document.head.appendChild(style);
-</script>
+    .carousel-section {
+        margin-bottom: 40px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the container */
+    }
 
-</body>
-</html>
+    .carousel-section img {
+        width: 30px; /* Size of the RSS icon */
+        height: 30px;
+        margin-right: 10px; /* Space between the icon and the title */
+    }
+
+    .carousel-container {
+        display: inline-block;
+        text-align: left;
+        width: 75%; /* Set the container width to 75% */
+        overflow: hidden;
+        position: relative;
+    }
+
+    .carousel-item {
+        background-color: #fff;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        margin-right: 15px; /* Add space between the boxes */
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-shrink: 0;
+        width: 300px;
+        height: auto; /* Adjust height as needed */
+        box-sizing: border-box;
+        overflow: hidden; /* Ensure content doesn't overflow */
+        border: 1px solid #ddd; /* Add a light border around each item */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    }
+
+    .carousel-item .rss-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distributes space evenly between items */
+        height: 100%;
+    }
+
+    .carousel-item .rss-item h3 {
+        margin-bottom: 5px; /* Minimal space between title and description */
+    }
+
+    .carousel-item .rss-item p {
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex-grow: 1; /* Fills the space between title and Read More */
+    }
+
+    .carousel-item .rss-item a {
+        align-self: flex-start; /* Keeps the Read More link aligned to the left */
+        margin-top: 10px; /* Ensures there's some space above the link */
+    }
+
+    .carousel-item h3 {
+        margin: 0;
+        font-size: 1.1em;
+    }
+
+    .carousel-item p {
+        margin: 10px 0 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal; /* Ensure text wraps */
+    }
+
+    .carousel {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: scroll; /* Ensure the scrollbar is visible */
+        white-space: normal;
+        display: flex;
+        position: relative;
+    }
+
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+        display: inline-block;
+        min-width: 300px;
+        box-sizing: border-box;
+    }
+
+    footer {
+        background-color: #668E95; /* Change footer background to custom color */
+        color: #fff; /* Change footer text to white */
+        padding: 20px 0;
+        text-align: center;
+        border-top: 1px solid #ddd; /* Add border for better separation */
+    }
+
+    .chatgpt-box {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+
+    .chatgpt-box img {
+        max-width: 50px; /* Reduce the size by 50% */
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* Custom CSS for the mental health message with background image */
+    .mental-health-message {
+        background: url('https://paulduplantis.github.io/DIWTemplate/Depression.png') no-repeat center center;
+        background-size: cover;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 1em;
+        padding: 15px;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .mental-health-message h3 {
+        font-size: 1.2em;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .mental-health-message p {
+        font-size: 1em;
+        color: #fff;
+    }
+</style>
