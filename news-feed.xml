@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>News Feed - Pathways for Mental Health / Minimize Homelessness</title>
+        <link>https://www.yoursite.com</link>
+        <description>This feed contains news articles related to mental health and homelessness.</description>
+        <language>en-us</language>
+
+        <item>
+            <title>How Depression Can Lead to Homelessness</title>
+            <link>https://www.yoursite.com/articles/depression-homelessness</link>
+            <description>This article explores the connection between depression and homelessness, providing insights and resources for those affected.</description>
+            <pubDate>Wed, 01 Jan 2024 00:00:00 +0000</pubDate>
+        </item>
+
+        <!-- Add more items below following the same format -->
+
+    </channel>
+</rss>
