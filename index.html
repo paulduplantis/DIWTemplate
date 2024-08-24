@@ -7,50 +7,45 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff; /* Change background to white */
-            color: #000; /* Change text color to black */
+            background-color: #fff;
+            color: #000;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #668E95; /* Header background color */
-            color: #fff; /* Header text color */
+            background-color: #668E95;
+            color: #fff;
             padding: 10px 5px;
             text-align: center;
         }
         header h1 {
-            font-size: 2em; /* Example header font size */
+            font-size: 2em;
             margin: 10px 0;
         }
         nav {
             margin-top: 10px;
             text-align: center;
         }
-
         nav ul {
             padding: 0;
             margin: 0;
             list-style-type: none;
         }
-
         nav ul li {
             display: inline-block;
             margin-right: 15px;
-            position: relative; /* Needed for dropdown positioning */
+            position: relative;
         }
-
         nav ul li a {
             text-decoration: none;
-            color: #fff; /* White text color */
+            color: #fff;
             padding: 10px 15px;
             display: block;
         }
-
         nav ul li:hover > a {
-            background-color: #556D73; /* Darken background on hover */
+            background-color: #556D73;
             border-radius: 5px;
         }
-
         nav ul li ul {
             display: none;
             position: absolute;
@@ -58,33 +53,29 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
-            top: 35px; /* Position dropdown below the parent item */
+            top: 35px;
             left: 0;
             width: 150px;
             border-radius: 5px;
         }
-
         nav ul li:hover ul {
-            display: block; /* Show the dropdown menu on hover */
+            display: block;
         }
-
         nav ul li ul li {
             display: block;
             margin: 0;
         }
-
         nav ul li ul li a {
             padding: 10px 15px;
         }
-
         nav ul li ul li a:hover {
-            background-color: #556D73; /* Darken background on hover in dropdown */
+            background-color: #556D73;
             border-radius: 5px;
         }
 
         .share-container {
-            background-color: #f0f0f0; /* Light grey background */
-            padding: 10px 0; /* 10px padding top and bottom */
+            background-color: #f0f0f0;
+            padding: 10px 0;
             text-align: center;
             display: flex;
             justify-content: center;
@@ -92,7 +83,7 @@
         }
         .share-icons,
         .subscribe-icons {
-            margin: 0 20px; /* Add space between Share and Subscribe sections */
+            margin: 0 20px;
             text-align: center;
         }
         .share-icons a,
@@ -110,23 +101,23 @@
             padding: 20px;
         }
         .content-box {
-            background-color: #fff; /* Change content box background to white */
-            color: #000; /* Change content box text to black */
-            padding: 0px 0px; /* Add more padding to the top and bottom */
+            background-color: #fff;
+            color: #000;
+            padding: 0px 0px;
             text-align: center;
             margin-bottom: 10px;
             border-radius: 5px;
-            height: auto; /* Adjust height as needed */
+            height: auto;
             box-sizing: border-box;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #ddd; /* Add border for better separation */
+            border: 1px solid #ddd;
             flex-direction: column;
         }
         .content-box h2 {
-            font-size: 2em; /* Match the header font size */
-            margin-bottom: 20px; /* Add space below the h2 */
+            font-size: 2em;
+            margin-bottom: 20px;
         }
 
         .carousel-section {
@@ -134,17 +125,18 @@
             text-align: center;
             display: flex;
             align-items: center;
-            justify-content: center; /* Center the container */
+            justify-content: center;
+            flex-direction: column; /* Center title and filter links */
         }
         .carousel-section img {
-            width: 30px; /* Size of the RSS icon */
+            width: 30px;
             height: 30px;
-            margin-right: 10px; /* Space between the icon and the title */
+            margin-right: 10px;
         }
         .carousel-container {
             display: inline-block;
             text-align: left;
-            width: 75%; /* Set the container width to 75% */
+            width: 75%;
             overflow: hidden;
             position: relative;
         }
@@ -153,41 +145,41 @@
             background-color: #fff;
             border-radius: 5px;
             margin-bottom: 20px;
-            margin-right: 15px; /* Add space between the boxes */
+            margin-right: 15px;
             padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             flex-shrink: 0;
             width: 300px;
-            height: auto; /* Adjust height as needed */
+            height: auto;
             box-sizing: border-box;
-            overflow: hidden; /* Ensure content doesn't overflow */
-            border: 1px solid #ddd; /* Add a light border around each item */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+            overflow: hidden;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .carousel-item .rss-item {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Distributes space evenly between items */
+            justify-content: space-between;
             height: 100%;
         }
 
         .carousel-item .rss-item h3 {
-            margin-bottom: 5px; /* Minimal space between title and description */
+            margin-bottom: 5px;
         }
 
         .carousel-item .rss-item p {
             margin: 0;
             overflow: hidden;
             text-overflow: ellipsis;
-            flex-grow: 1; /* Fills the space between title and Read More */
+            flex-grow: 1;
         }
 
         .carousel-item .rss-item a {
-            align-self: flex-start; /* Keeps the Read More link aligned to the left */
-            margin-top: 10px; /* Ensures there's some space above the link */
+            align-self: flex-start;
+            margin-top: 10px;
         }
 
         .carousel-item h3 {
@@ -199,13 +191,13 @@
             margin: 10px 0 0;
             overflow: hidden;
             text-overflow: ellipsis;
-            white-space: normal; /* Ensure text wraps */
+            white-space: normal;
         }
 
         .carousel {
             width: 100%;
             max-width: 100%;
-            overflow-x: scroll; /* Ensure the scrollbar is visible */
+            overflow-x: scroll;
             white-space: normal;
             display: flex;
             position: relative;
@@ -220,26 +212,38 @@
             box-sizing: border-box;
         }
 
-        /* Custom Text Container */
+        .filter-links {
+            margin-top: 5px;
+            text-align: center;
+        }
+        .filter-links a {
+            text-decoration: none;
+            color: #000;
+            margin: 0 10px;
+        }
+        .filter-links a:hover {
+            text-decoration: underline;
+        }
+
         .text-container {
-            width: 75%; /* Matches the width of the carousel */
-            margin: 20px auto; /* Center the container with auto margins */
-            height: 2000px; /* Set the height to 2000px */
-            background-color: #f7f7f7; /* Light grey background for contrast */
-            color: #000; /* Text color */
-            padding: 20px; /* Add padding inside the container */
-            box-sizing: border-box; /* Include padding in the height/width */
-            border-radius: 5px; /* Optional: Add border radius */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-            text-align: left; /* Left-align text */
+            width: 75%;
+            margin: 20px auto;
+            height: 2000px;
+            background-color: #f7f7f7;
+            color: #000;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
 
         footer {
-            background-color: #668E95; /* Footer background color */
-            color: #fff; /* Footer text color */
+            background-color: #668E95;
+            color: #fff;
             padding: 20px 0;
             text-align: center;
-            border-top: 1px solid #ddd; /* Add border for better separation */
+            border-top: 1px solid #ddd;
         }
         .chatgpt-box {
             width: 100%;
@@ -248,12 +252,11 @@
             text-align: center;
         }
         .chatgpt-box img {
-            max-width: 50px; /* Reduce the size by 50% */
+            max-width: 50px;
             height: auto;
             border-radius: 10px;
         }
 
-        /* Custom CSS for the mental health message with background image */
         .mental-health-message {
             background: url('https://paulduplantis.github.io/DIWTemplate/Depression.png') no-repeat center center;
             background-size: cover;
@@ -353,6 +356,13 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
             <h2>News Feed</h2>
+            <div class="filter-links">
+                Filter by:
+                <a href="#">News</a> | 
+                <a href="#">Audio</a> | 
+                <a href="#">Video</a> | 
+                <a href="#">Books</a>
+            </div>
             <div class="carousel">
                 <div class="carousel-inner" id="carousel-inner-news">
                     <!-- News feed items will be dynamically inserted here -->
@@ -365,7 +375,6 @@
     <section class="text-container">
         <p>Your text goes here. You can add more paragraphs, images, or other content as needed.</p>
         <p>This container is 2000px tall and spans the same width as the carousel.</p>
-        <!-- Add more content as needed -->
     </section>
 
 </main>
@@ -464,10 +473,6 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-news', '');
-        // Removed the following lines to exclude Video, Audio, and Book feeds
-        // fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-video', '');
-        // fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-audio', '');
-        // fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-books', '');
     });
 
     // Add custom CSS for the mental health message boxes
