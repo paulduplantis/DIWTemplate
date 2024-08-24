@@ -220,20 +220,17 @@
             box-sizing: border-box;
         }
 
-        /* Filter Links */
         .filter-links {
-            margin-top: 10px;
-            font-size: 1em;
+            font-size: 0.9em; /* Reduce the font size */
+            font-weight: normal; /* Remove the bold stroke */
+            text-align: center; /* Center the text */
+            margin-top: 10px; /* Add a bit of space above */
         }
 
         .filter-links a {
-            margin-left: 10px;
             text-decoration: none;
-            color: #000;
-        }
-
-        .filter-links a:hover {
-            text-decoration: underline;
+            color: #000; /* Make the links black */
+            margin: 0 5px; /* Add some space between the links */
         }
 
         /* Custom Text Container */
@@ -368,7 +365,7 @@
     <section class="carousel-section">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
-            <h2>News Feed <span class="filter-links">| Filter by: <a href="#">News</a> | <a href="#">Audio</a> | <a href="#">Video</a> | <a href="#">Books</a></span></h2>
+            <h2>News Feed <span class="filter-links"> | Filter by: <a href="#">News</a> | <a href="#">Audio</a> | <a href="#">Video</a> | <a href="#">Books</a></span></h2>
             <div class="carousel">
                 <div class="carousel-inner" id="carousel-inner-news">
                     <!-- News feed items will be dynamically inserted here -->
