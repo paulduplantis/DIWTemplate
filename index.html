@@ -361,45 +361,6 @@
         </div>
     </section>
 
-    <!-- Video Feed -->
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>Video Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-video">
-                    <!-- Video feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Audio Feed -->
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>Audio Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-audio">
-                    <!-- Audio feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Book Feed -->
-    <section class="carousel-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
-        <div class="carousel-container">
-            <h2>Book Feed</h2>
-            <div class="carousel">
-                <div class="carousel-inner" id="carousel-inner-books">
-                    <!-- Book feed items will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Custom Text Container -->
     <section class="text-container">
         <p>Your text goes here. You can add more paragraphs, images, or other content as needed.</p>
@@ -503,9 +464,10 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-news', '');
-        fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-video', '');
-        fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-audio', '');
-        fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-books', '');
+        // Removed the following lines to exclude Video, Audio, and Book feeds
+        // fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-video', '');
+        // fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-audio', '');
+        // fetchFeed('https://historyofrome.libsyn.com/rss', 'carousel-inner-books', '');
     });
 
     // Add custom CSS for the mental health message boxes
