@@ -164,7 +164,7 @@
             margin-right: 15px; /* Add space between the boxes */
             padding: 15px;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Stack items vertically */
             align-items: flex-start;
             flex-shrink: 0;
             width: 300px;
@@ -175,10 +175,17 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
         }
 
+        .carousel-item img {
+            width: 100%; /* Make the image take up the full width */
+            height: auto;
+            margin-bottom: 10px; /* Space between the image and text */
+            border-radius: 5px;
+        }
+
         .carousel-item .rss-item {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Distributes space evenly between items */
+            justify-content: space-between;
             height: 100%;
         }
 
@@ -463,6 +470,7 @@
                 const carouselItem = document.createElement('div');
                 carouselItem.classList.add('carousel-item');
                 carouselItem.innerHTML = `
+                    <img src="https://via.placeholder.com/300x150" alt="Article Image">
                     <div class="rss-item">
                         <h3>${title}</h3>
                         <p>${descriptionWithoutImages}</p>
