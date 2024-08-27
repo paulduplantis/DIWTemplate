@@ -173,6 +173,7 @@
     overflow: hidden; /* Ensure content doesn't overflow */
     border: 1px solid #ddd; /* Add a light border around each item */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    position: relative; /* Ensure elements are contained */
 }
 
         .carousel-item img {
@@ -187,6 +188,7 @@
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
+            z-index: 2;
             flex-grow: 1; /* Allow the content to grow but not overflow */
         }
 
@@ -203,7 +205,9 @@
 
         .carousel-item .rss-item a {
             align-self: flex-start; /* Keeps the Read More link aligned to the left */
-            margin-top: 5px; /* Ensures there's some space above the link */
+            position: relative;
+            z-index: 10;
+            margin-top: 10px; /* Ensures there's some space above the link */
         }
 
         .carousel-item h3 {
