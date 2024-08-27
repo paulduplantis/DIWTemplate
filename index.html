@@ -470,8 +470,7 @@
             const description = item.querySelector('description').textContent;
 
             // Fetch the image URL from the enclosure or custom tag
-            const enclosure = item.querySelector('enclosure');
-            const imageUrl = enclosure ? enclosure.getAttribute('url') : 'https://via.placeholder.com/300x150';
+           
 
             const carouselItem = document.createElement('div');
             carouselItem.classList.add('carousel-item');
