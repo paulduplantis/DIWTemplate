@@ -416,73 +416,75 @@
         // Add more messages as needed
     ];
 
-    async function fetchFeed(feedUrl, containerId, excludedTitle) {
-        try {
-            const response = await fetch(feedUrl);
-            if (!response.ok) {
-                console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
-                return;
-            }
-            const text = await response.text();
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(text, 'application/xml');
-            let items = Array.from(xml.querySelectorAll('item'));
+   async function fetchFeed(feedUrl, containerId, excludedTitle) {
+    try {
+        const response = await fetch(feedUrl);
+        if (!response.ok) {
+            console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
+            return;
+        }
+        const text = await response.text();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, 'application/xml');
+        let items = Array.from(xml.querySelectorAll('item'));
 
-            // Reverse the items to show oldest first
-            items.reverse();
+        // Reverse the items to show oldest first
+        items.reverse();
 
-            const carouselInner = document.getElementById(containerId);
-            if (items.length === 0) {
-                console.warn('No RSS feed items found.');
-                return;
-            }
+        const carouselInner = document.getElementById(containerId);
+        if (items.length === 0) {
+            console.warn('No RSS feed items found.');
+            return;
+        }
 
-            let messageIndex = 0;
-            items.forEach((item, index) => {
-                // Insert Mental Health Message every 3rd item
-                if (index > 0 && index % 3 === 0) {
-                    const message = mentalHealthMessages[messageIndex];
-                    const messageElement = document.createElement('div');
-                    messageElement.classList.add('carousel-item', 'mental-health-message');
-                    messageElement.innerHTML = `
-                        <div class="rss-item">
-                            <h3>${message.header}</h3>
-                            <p>${message.message}</p>
-                        </div>
-                    `;
-                    carouselInner.appendChild(messageElement);
-
-                    // Cycle through messages
-                    messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
-                }
-
-                // Normal RSS Feed Item
-                const title = item.querySelector('title').textContent;
-                if (title === excludedTitle) {
-                    return; // Skip this item
-                }
-                const link = item.querySelector('link').textContent;
-                const description = item.querySelector('description').textContent;
-
-                // Removing image tags from description
-                const descriptionWithoutImages = description.replace(/<img[^>]*>/g, '');
-
-                const carouselItem = document.createElement('div');
-                carouselItem.classList.add('carousel-item');
-                carouselItem.innerHTML = `
-                    <img src="https://via.placeholder.com/300x150" alt="Article Image">
+        let messageIndex = 0;
+        items.forEach((item, index) => {
+            // Insert Mental Health Message every 3rd item
+            if (index > 0 && index % 3 === 0) {
+                const message = mentalHealthMessages[messageIndex];
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('carousel-item', 'mental-health-message');
+                messageElement.innerHTML = `
                     <div class="rss-item">
-                        <h3>${title}</h3>
-                        <p>${descriptionWithoutImages}</p>
-                        <a href="${link}" target="_blank">Read More</a>
+                        <h3>${message.header}</h3>
+                        <p>${message.message}</p>
                     </div>
                 `;
-                carouselInner.appendChild(carouselItem);
-            });
-        } catch (error) {
-            console.error('Error fetching or parsing RSS feed:', error);
-        }
+                carouselInner.appendChild(messageElement);
+
+                // Cycle through messages
+                messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
+            }
+
+            // Normal RSS Feed Item
+            const title = item.querySelector('title').textContent;
+            if (title === excludedTitle) {
+                return; // Skip this item
+            }
+            const link = item.querySelector('link').textContent;
+            const description = item.querySelector('description').textContent;
+
+            // Fetch the image URL from the enclosure or custom tag
+            const enclosure = item.querySelector('enclosure');
+            const imageUrl = enclosure ? enclosure.getAttribute('url') : 'https://via.placeholder.com/300x150';
+
+            const carouselItem = document.createElement('div');
+            carouselItem.classList.add('carousel-item');
+            carouselItem.innerHTML = `
+                <img src="${imageUrl}" alt="Article Image">
+                <div class="rss-item">
+                    <h3>${title}</h3>
+                    <p>${description}</p>
+                    <a href="${link}" target="_blank">Read More</a>
+                </div>
+            `;
+            carouselInner.appendChild(carouselItem);
+        });
+    } catch (error) {
+        console.error('Error fetching or parsing RSS feed:', error);
     }
+}
+
 
     document.addEventListener('DOMContentLoaded', () => {
         fetchFeed('https://paulduplantis.github.io/DIWTemplate/rss-feed.xml', 'carousel-inner-news', '');
