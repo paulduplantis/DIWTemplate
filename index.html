@@ -5,116 +5,509 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIWTemplate</title>
     <style>
-        /* ... (previous styles remain unchanged) ... */
-
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* Change background to white */
+            color: #000; /* Change text color to black */
+            margin: 0;
+            padding: 0;
+        }
         header {
-            background-color: #668E95;
-            color: #fff;
+            background-color: #668E95; /* Header background color */
+            color: #fff; /* Header text color */
             padding: 10px 5px;
             text-align: center;
+            margin-bottom: 0; /* Ensure no extra margin is added */
+        }
+        header h1 {
+            font-size: 2em; /* Example header font size */
+            margin: 10px 0;
+        }
+        nav {
+            margin-top: 10px;
             margin-bottom: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .submit-article {
-            margin-right: auto;
-            padding-right: 10px;
-        }
-
-        .submit-article a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .header-title {
-            flex-grow: 1;
             text-align: center;
         }
 
-        .share-subscribe-container {
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 15px;
+            position: relative; /* Needed for dropdown positioning */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff; /* White text color */
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li:hover > a {
+            background-color: #556D73; /* Darken background on hover */
+            border-radius: 5px;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #668E95;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            top: 35px; /* Position dropdown below the parent item */
+            left: 0;
+            width: 150px;
+            border-radius: 5px;
+        }
+
+        nav ul li:hover ul {
+            display: block; /* Show the dropdown menu on hover */
+        }
+
+        nav ul li ul li {
+            display: block;
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 10px 15px;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #556D73; /* Darken background on hover in dropdown */
+            border-radius: 5px;
+        }
+
+        .share-container {
+            background-color: #f0f0f0; /* Light grey background */
+            padding: 10px 0; /* 10px padding top and bottom */
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Space out the two sections */
+            align-items: center;
+            padding: 10px 150px; /* Add padding to create the 300px gap with top and bottom padding */
+        }
+        .share-icons,
+        .subscribe-icons {
+            text-align: center;
+        }
+        .share-icons a,
+        .subscribe-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .share-icons img,
+        .subscribe-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        main {
+            padding: 5px; 
+        }
+        .content-box {
+            background-color: #fff; /* Change content box background to white */
+            color: #000; /* Change content box text to black */
+            padding: 5px 5px; /* Add more padding to the top and bottom */
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            height: auto; /* Adjust height as needed */
+            box-sizing: border-box;
             display: flex;
             align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd; /* Add border for better separation */
+            flex-direction: column;
+            width: 75%; /* Set the width to 50% of the parent container */
+            margin: 0 auto; /* Centers the box horizontally */
+    /* Other properties */
+        }
+        .content-box h2 {
+            font-size: 2em; /* Match the header font size */
+            margin-bottom: 10px; /* Add space below the h2 */
+            margin-top: 5px; /* Add space above the h2 */
         }
 
-        .share-container, .subscribe-container {
+        .carousel-section {
+            margin-bottom: 40px;
+            text-align: center;
             display: flex;
             align-items: center;
-            padding: 0 10px;
+            justify-content: center; /* Center the container */
+        }
+        .carousel-section img {
+            width: 30px; /* Size of the RSS icon */
+            height: 30px;
+            margin-right: 10px; /* Space between the icon and the title */
+        }
+        .carousel-container {
+            display: inline-block;
+            text-align: left;
+            width: 75%; /* Set the container width to 75% */
+            overflow: hidden;
+            position: relative;
+            margin-top: 0px; /* Reduce this value to decrease the gap */
         }
 
-        .share-icons, .subscribe-icons {
-            display: flex;
-            align-items: center;
+ .carousel {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: scroll;
+    white-space: normal;
+    display: flex;
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    width: 300px;
+    min-width: 300px;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.carousel-item .rss-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 2;
+    flex-grow: 1;
+}
+
+.carousel-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+}
+
+.carousel-item p {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    flex-grow: 1;
+}
+
+.carousel-item .rss-item a {
+    align-self: flex-start;
+    position: relative;
+    z-index: 10;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+        .filter-links {
+            font-size: 0.8em; /* Reduce the font size */
+            font-weight: normal; /* Remove the bold stroke */
+            text-align: center; /* Center the text */
+            margin-top: 0px; /* Add a bit of space above */
         }
 
-        .share-icons a, .subscribe-icons a {
-            margin: 0 5px;
+        .filter-links a {
+            text-decoration: none;
+            color: #0000FF; /* Make the links black */
+            margin: 0 5px; /* Add some space between the links */
         }
 
-        .share-icons img, .subscribe-icons img {
-            width: 20px;
-            height: 20px;
+        /* Custom Text Container */
+        .text-container {
+            width: 75%; /* Matches the width of the carousel */
+            margin: 20px auto; /* Center the container with auto margins */
+            height: 2000px; /* Set the height to 2000px */
+            background-color: #f7f7f7; /* Light grey background for contrast */
+            color: #000; /* Text color */
+            padding: 20px; /* Add padding inside the container */
+            box-sizing: border-box; /* Include padding in the height/width */
+            border-radius: 5px; /* Optional: Add border radius */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+            text-align: left; /* Left-align text */
         }
 
-        /* ... (rest of the styles remain unchanged) ... */
+        footer {
+            background-color: #668E95; /* Footer background color */
+            color: #fff; /* Footer text color */
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #ddd; /* Add border for better separation */
+        }
+        .chatgpt-box {
+            width: 100%;
+            max-width: 800px;
+            margin: 10px auto 10px;
+            text-align: center;
+            padding: 5px;
+        }
+        .chatgpt-box img {
+            max-width: 50px; /* Reduce the size by 50% */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Custom CSS for the mental health message with background image */
+        .mental-health-message {
+            background: url('https://paulduplantis.github.io/DIWTemplate/Depression.png') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 1em;
+            padding: 15px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .mental-health-message h3 {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .mental-health-message p {
+            font-size: 1em;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="header-content">
-        <div class="submit-article">
-            <a href="http://www.test.com">Submit an Article</a>
-        </div>
-        <div class="header-title">
-            <h1>Pathways for Mental Health</h1>
-        </div>
-        <div class="share-subscribe-container">
-            <div class="share-container">
-                <span>Share to Care!</span>
-                <div class="share-icons">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site&url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                        <img src="https://paulduplantis.github.io/DIWTemplate/x_logo.png" alt="X">
-                    </a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
-                    </a>
-                    <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
-                    </a>
-                    <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                        <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
-                    </a>
-                </div>
-            </div>
-            <div class="subscribe-container">
-                <span>Subscribe to Learn</span>
-                <div class="subscribe-icons">
-                    <a href="http://www.testrssfeed.com" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
-                    </a>
-                    <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
-                        <img src="https://paulduplantis.github.io/DIWTemplate/email-subscription.png" alt="Email">
-                    </a>
-                </div>
-            </div>
-        </div>
+<div class="share-container">
+        <div class="share-icons">
+        <span>Share to Care!</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site&url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+            <img src="https://paulduplantis.github.io/DIWTemplate/x_logo.png" alt="X">
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
+        </a>
+        <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+            <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
+        </a>
     </div>
+    <div class="subscribe-icons">
+        <span>Subscribe to Learn</span>
+        <a href="http://www.testrssfeed.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
+        </a>
+        <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
+            <img src="https://paulduplantis.github.io/DIWTemplate/email-subscription.png" alt="Email">
+        </a>
+    </div>
+</div>
+
+<header>
+    <h1>Pathways for Mental Health</h1>
+    <nav>
+        <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Depression.html">Depression</a></li>
+            <li><a href="Anxiety.html">Anxiety</a></li>
+            <li><a href="Bipolar.html">Bipolar</a></li>
+            <li><a href="PTSD.html">PTSD</a></li>
+            <li><a href="OCD.html">OCD</a></li>
+            <li><a href="Schizophrenia.html">Schizophrenia</a></li>
+            <li><a href="Submit an Article.html">Submit an Article</a></li>
+            <li><a href="about.html">About</a></li>
+    
+    </nav>
 </header>
 
-<!-- ... (rest of the body content remains unchanged) ... -->
+<main>
+    <!-- Main Feed -->
+    <section class="carousel-section">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
+        <div class="carousel-container">
+ <h2><span class="filter-links"> Filter by: <a href="https://paulduplantis.github.io/DIWTemplate/all-rss-feed.xml">All</a> | <a href="https://paulduplantis.github.io/DIWTemplate/news-rss-feed.xml">News</a> | <a href="https://paulduplantis.github.io/DIWTemplate/audio-rss-feed.xml">Audio</a> | <a href="https://paulduplantis.github.io/DIWTemplate/video-rss-feed.xml">Video</a> | <a href="https://paulduplantis.github.io/DIWTemplate/books-rss-feed.xml">Books</a></span></h2>
+           
+            <div class="carousel">
+                <div class="carousel-inner" id="carousel-inner-news">
+                    <!-- News feed items will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="content-box">
+        <h2>Ask ChatGPT:</h2>
+        <p style="font-size: 2em;">"How can I help my loved one who is suffering from a Mental Health crisis?"</p>
+        <div class="chatgpt-box">
+            <a href="https://chatgpt.com" class="chat-link" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo">
+            </a>
+            <p style="font-size: 1em;">“Or come up with your own question if you are curious and engage with others to better understand the problem and learn of pathways to help”</p>
+        </div>
+    </div>
+    <!-- Custom Text Container -->
+    <section class="text-container">
+        <p style="font-size: 0.9em; font-style: italic;">Please note: Pathways for Mental Health is not operated by medical professionals. The information provided on this site is intended for general informational purposes only and should not be considered a substitute for professional medical advice, diagnosis, or treatment. Always seek the guidance of a qualified healthcare provider with any questions you may have regarding your mental health.  
+
+</p>
+        <p style="font-size: 1.5em;">Pathways for Mental Health supports individuals facing mental health challenges and those who care for them, offering guidance and resources for times of need. We believe the improvement of Mental Health across all of society should be the next moonshot driven not only by institutional directives but by governments, businesses, and especially by everyday people. </p>
+       
+    
+        <!-- Add more content as needed -->
+    </section>
+
+</main>
+
+<footer>
+    <p>To help with funding to promote this message to the St. Augustine, Florida community, contact: paulduplantis@gmail.com</p>
+    <p>To access the GitHub Repository to copy code and extend this message, visit <a href="https://github.com/paulduplantis/DIWTemplate" target="_blank">https://github.com/paulduplantis/DIWTemplate</a></p>
+    <p>Build and share to inspire mental health awareness, access to resources, and volunteerism.</p>
+    <p><a href="about.html">About</a></p>
+</footer>
+
+<script>
+    // Array of Mental Health Messages with headers
+    const mentalHealthMessages = [
+        {
+            header: "DEPRESSION",
+            message: "How can depression lead to homelessness? What are the common symptoms of depression? How can you get help with depression? How can you help in your community?"
+        },
+        {
+            header: "Anxiety Resources",
+            message: "It's okay to ask for help: Resources available for Anxiety"
+        },
+        {
+            header: "Stress Management",
+            message: "Support your mental well-being: Tips for managing stress"
+        },
+        // Add more messages as needed
+    ];
+
+   async function fetchFeed(feedUrl, containerId, excludedTitle) {
+    try {
+        const response = await fetch(feedUrl);
+        if (!response.ok) {
+            console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
+            return;
+        }
+        const text = await response.text();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, 'application/xml');
+        let items = Array.from(xml.querySelectorAll('item'));
+
+        // Reverse the items to show oldest first
+        items.reverse();
+
+        const carouselInner = document.getElementById(containerId);
+        if (items.length === 0) {
+            console.warn('No RSS feed items found.');
+            return;
+        }
+
+        let messageIndex = 0;
+        items.forEach((item, index) => {
+            // Insert Mental Health Message every 3rd item
+            if (index > 0 && index % 3 === 0) {
+                const message = mentalHealthMessages[messageIndex];
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('carousel-item', 'mental-health-message');
+                messageElement.innerHTML = `
+                    <div class="rss-item">
+                        <h3>${message.header}</h3>
+                        <p>${message.message}</p>
+                    </div>
+                `;
+                carouselInner.appendChild(messageElement);
+
+                // Cycle through messages
+                messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
+            }
+
+            // Normal RSS Feed Item
+            const title = item.querySelector('title').textContent;
+            if (title === excludedTitle) {
+                return; // Skip this item
+            }
+            const link = item.querySelector('link').textContent;
+            const description = item.querySelector('description').textContent;
+
+            // Fetch the image URL from the enclosure or custom tag
+         const enclosure = item.querySelector('enclosure');
+            const imageUrl = enclosure ? enclosure.getAttribute('url') : 'https://via.placeholder.com/300x150';
+   
+            const carouselItem = document.createElement('div');
+            carouselItem.classList.add('carousel-item');
+            carouselItem.innerHTML = `
+                <img src="${imageUrl}" alt="Article Image">
+                <div class="rss-item">
+                    <h3>${title}</h3>
+                    <p>${description}</p>
+                    <a href="${link}" target="_blank">Read More</a>
+                </div>
+            `;
+            carouselInner.appendChild(carouselItem);
+        });
+    } catch (error) {
+        console.error('Error fetching or parsing RSS feed:', error);
+    }
+}
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchFeed('https://paulduplantis.github.io/DIWTemplate/news-rss-feed.xml', 'carousel-inner-news', '');
+    });
+
+    // Add custom CSS for the mental health message boxes
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .mental-health-message {
+            background-color: #000; /* Light grey background */
+            color: #333; /* Darker text color */
+            font-family: Arial, sans-serif; /* Font style */
+            font-size: 1em; /* Font size */
+        }
+
+        .mental-health-message h3 {
+            font-size: 1.2em; /* Slightly larger font for the title */
+            color: #fff; /* Title color */
+        }
+
+        .mental-health-message p {
+            font-size: 1em; /* Font size for the paragraph */
+            color: #fff; /* Text color for the paragraph */
+        }
+    `;
+    document.head.appendChild(style);
+</script>
 
 </body>
 </html>
