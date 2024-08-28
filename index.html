@@ -84,30 +84,46 @@
             border-radius: 5px;
         }
 
-        .share-container {
-            background-color: #f0f0f0; /* Light grey background */
-            padding: 10px 0; /* 10px padding top and bottom */
-            text-align: center;
+        .header-flex-container {
             display: flex;
-            justify-content: space-between; /* Space out the two sections */
+            justify-content: flex-end;
             align-items: center;
-            padding: 10px 150px; /* Add padding to create the 300px gap with top and bottom padding */
+            padding: 10px 10px; /* Adjust padding as needed */
+            background-color: #f0f0f0;
         }
-        .share-icons,
-        .subscribe-icons {
-            text-align: center;
-        }
-        .share-icons a,
-        .subscribe-icons a {
-            margin: 0 10px;
+
+        .submit-link {
+            margin-right: 10px; /* Space between "Submit an Article" and the share icons */
+            font-size: 16px;
             text-decoration: none;
             color: #000;
         }
-        .share-icons img,
-        .subscribe-icons img {
+
+        .share-subscribe-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .share-icons, .subscribe-icons {
+            display: flex;
+            align-items: center;
+            margin-right: 10px; /* Space between share and subscribe sections */
+        }
+
+        .share-icons span, .subscribe-icons span {
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+        .share-icons a, .subscribe-icons a {
+            margin-left: 5px;
+        }
+
+        .share-icons img, .subscribe-icons img {
             width: 30px;
             height: 30px;
         }
+
         main {
             padding: 5px; 
         }
@@ -128,7 +144,7 @@
             flex-direction: column;
             width: 75%; /* Set the width to 50% of the parent container */
             margin: 0 auto; /* Centers the box horizontally */
-    /* Other properties */
+        /* Other properties */
         }
         .content-box h2 {
             font-size: 2em; /* Match the header font size */
@@ -157,78 +173,78 @@
             margin-top: 0px; /* Reduce this value to decrease the gap */
         }
 
- .carousel {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: scroll;
-    white-space: normal;
-    display: flex;
-    position: relative;
-}
+        .carousel {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: scroll;
+            white-space: normal;
+            display: flex;
+            position: relative;
+        }
 
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-}
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
 
-.carousel-item {
-    background-color: #fff;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    margin-right: 15px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-shrink: 0;
-    width: 300px;
-    min-width: 300px;
-    height: auto;
-    box-sizing: border-box;
-    overflow: hidden;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
+        .carousel-item {
+            background-color: #fff;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            margin-right: 15px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-shrink: 0;
+            width: 300px;
+            min-width: 300px;
+            height: auto;
+            box-sizing: border-box;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
 
-.carousel-item img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    flex-shrink: 0;
-}
+        .carousel-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            flex-shrink: 0;
+        }
 
-.carousel-item .rss-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    z-index: 2;
-    flex-grow: 1;
-}
+        .carousel-item .rss-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            z-index: 2;
+            flex-grow: 1;
+        }
 
-.carousel-item h3 {
-    margin: 0 0 5px 0;
-    font-size: 1.1em;
-}
+        .carousel-item h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1em;
+        }
 
-.carousel-item p {
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    flex-grow: 1;
-}
+        .carousel-item p {
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            flex-grow: 1;
+        }
 
-.carousel-item .rss-item a {
-    align-self: flex-start;
-    position: relative;
-    z-index: 10;
-    margin-top: 10px;
-    display: inline-block;
-}
+        .carousel-item .rss-item a {
+            align-self: flex-start;
+            position: relative;
+            z-index: 10;
+            margin-top: 10px;
+            display: inline-block;
+        }
 
         .filter-links {
             font-size: 0.8em; /* Reduce the font size */
@@ -303,33 +319,36 @@
 </head>
 <body>
 
-<div class="share-container">
+<div class="header-flex-container">
+    <a href="https://www.test.com" class="submit-link">Submit an Article</a>
+    <div class="share-subscribe-container">
         <div class="share-icons">
-        <span>Share to Care!</span>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-        </a>
-        <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site&url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-            <img src="https://paulduplantis.github.io/DIWTemplate/x_logo.png" alt="X">
-        </a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
-        </a>
-        <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
-        </a>
-        <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-            <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
-        </a>
-    </div>
-    <div class="subscribe-icons">
-        <span>Subscribe to Learn</span>
-        <a href="http://www.testrssfeed.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
-        </a>
-        <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
-            <img src="https://paulduplantis.github.io/DIWTemplate/email-subscription.png" alt="Email">
-        </a>
+            <span>Share to Care!</span>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site&url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+                <img src="https://paulduplantis.github.io/DIWTemplate/x_logo.png" alt="X">
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
+            </a>
+            <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+                <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
+            </a>
+        </div>
+        <div class="subscribe-icons">
+            <span>Subscribe to Learn</span>
+            <a href="http://www.testrssfeed.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
+            </a>
+            <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
+                <img src="https://paulduplantis.github.io/DIWTemplate/email-subscription.png" alt="Email">
+            </a>
+        </div>
     </div>
 </div>
 
@@ -346,7 +365,7 @@
             <li><a href="Schizophrenia.html">Schizophrenia</a></li>
             <li><a href="Submit an Article.html">Submit an Article</a></li>
             <li><a href="about.html">About</a></li>
-    
+        </ul>
     </nav>
 </header>
 
@@ -355,7 +374,7 @@
     <section class="carousel-section">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Feed Icon">
         <div class="carousel-container">
- <h2><span class="filter-links"> Filter by: <a href="https://paulduplantis.github.io/DIWTemplate/all-rss-feed.xml">All</a> | <a href="https://paulduplantis.github.io/DIWTemplate/news-rss-feed.xml">News</a> | <a href="https://paulduplantis.github.io/DIWTemplate/audio-rss-feed.xml">Audio</a> | <a href="https://paulduplantis.github.io/DIWTemplate/video-rss-feed.xml">Video</a> | <a href="https://paulduplantis.github.io/DIWTemplate/books-rss-feed.xml">Books</a></span></h2>
+            <h2><span class="filter-links"> Filter by: <a href="https://paulduplantis.github.io/DIWTemplate/all-rss-feed.xml">All</a> | <a href="https://paulduplantis.github.io/DIWTemplate/news-rss-feed.xml">News</a> | <a href="https://paulduplantis.github.io/DIWTemplate/audio-rss-feed.xml">Audio</a> | <a href="https://paulduplantis.github.io/DIWTemplate/video-rss-feed.xml">Video</a> | <a href="https://paulduplantis.github.io/DIWTemplate/books-rss-feed.xml">Books</a></span></h2>
            
             <div class="carousel">
                 <div class="carousel-inner" id="carousel-inner-news">
@@ -412,74 +431,74 @@
         // Add more messages as needed
     ];
 
-   async function fetchFeed(feedUrl, containerId, excludedTitle) {
-    try {
-        const response = await fetch(feedUrl);
-        if (!response.ok) {
-            console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
-            return;
-        }
-        const text = await response.text();
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(text, 'application/xml');
-        let items = Array.from(xml.querySelectorAll('item'));
+    async function fetchFeed(feedUrl, containerId, excludedTitle) {
+        try {
+            const response = await fetch(feedUrl);
+            if (!response.ok) {
+                console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
+                return;
+            }
+            const text = await response.text();
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, 'application/xml');
+            let items = Array.from(xml.querySelectorAll('item'));
 
-        // Reverse the items to show oldest first
-        items.reverse();
+            // Reverse the items to show oldest first
+            items.reverse();
 
-        const carouselInner = document.getElementById(containerId);
-        if (items.length === 0) {
-            console.warn('No RSS feed items found.');
-            return;
-        }
+            const carouselInner = document.getElementById(containerId);
+            if (items.length === 0) {
+                console.warn('No RSS feed items found.');
+                return;
+            }
 
-        let messageIndex = 0;
-        items.forEach((item, index) => {
-            // Insert Mental Health Message every 3rd item
-            if (index > 0 && index % 3 === 0) {
-                const message = mentalHealthMessages[messageIndex];
-                const messageElement = document.createElement('div');
-                messageElement.classList.add('carousel-item', 'mental-health-message');
-                messageElement.innerHTML = `
+            let messageIndex = 0;
+            items.forEach((item, index) => {
+                // Insert Mental Health Message every 3rd item
+                if (index > 0 && index % 3 === 0) {
+                    const message = mentalHealthMessages[messageIndex];
+                    const messageElement = document.createElement('div');
+                    messageElement.classList.add('carousel-item', 'mental-health-message');
+                    messageElement.innerHTML = `
+                        <div class="rss-item">
+                            <h3>${message.header}</h3>
+                            <p>${message.message}</p>
+                        </div>
+                    `;
+                    carouselInner.appendChild(messageElement);
+
+                    // Cycle through messages
+                    messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
+                }
+
+                // Normal RSS Feed Item
+                const title = item.querySelector('title').textContent;
+                if (title === excludedTitle) {
+                    return; // Skip this item
+                }
+                const link = item.querySelector('link').textContent;
+                const description = item.querySelector('description').textContent;
+
+                // Fetch the image URL from the enclosure or custom tag
+                const enclosure = item.querySelector('enclosure');
+                const imageUrl = enclosure ? enclosure.getAttribute('url') : 'https://via.placeholder.com/300x150';
+
+                const carouselItem = document.createElement('div');
+                carouselItem.classList.add('carousel-item');
+                carouselItem.innerHTML = `
+                    <img src="${imageUrl}" alt="Article Image">
                     <div class="rss-item">
-                        <h3>${message.header}</h3>
-                        <p>${message.message}</p>
+                        <h3>${title}</h3>
+                        <p>${description}</p>
+                        <a href="${link}" target="_blank">Read More</a>
                     </div>
                 `;
-                carouselInner.appendChild(messageElement);
-
-                // Cycle through messages
-                messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
-            }
-
-            // Normal RSS Feed Item
-            const title = item.querySelector('title').textContent;
-            if (title === excludedTitle) {
-                return; // Skip this item
-            }
-            const link = item.querySelector('link').textContent;
-            const description = item.querySelector('description').textContent;
-
-            // Fetch the image URL from the enclosure or custom tag
-         const enclosure = item.querySelector('enclosure');
-            const imageUrl = enclosure ? enclosure.getAttribute('url') : 'https://via.placeholder.com/300x150';
-   
-            const carouselItem = document.createElement('div');
-            carouselItem.classList.add('carousel-item');
-            carouselItem.innerHTML = `
-                <img src="${imageUrl}" alt="Article Image">
-                <div class="rss-item">
-                    <h3>${title}</h3>
-                    <p>${description}</p>
-                    <a href="${link}" target="_blank">Read More</a>
-                </div>
-            `;
-            carouselInner.appendChild(carouselItem);
-        });
-    } catch (error) {
-        console.error('Error fetching or parsing RSS feed:', error);
+                carouselInner.appendChild(carouselItem);
+            });
+        } catch (error) {
+            console.error('Error fetching or parsing RSS feed:', error);
+        }
     }
-}
 
 
     document.addEventListener('DOMContentLoaded', () => {
