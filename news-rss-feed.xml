@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
     <channel>
-        <title>News Feed - Pathways for Mental Health / Minimize Homelessness</title>
+        <title>News Feed - Pathways for Mental Health</title>
         <link>https://paulduplantis.github.io/DIWTemplate/</link>
-        <description>This feed contains news articles related to mental health and homelessness.</description>
+        <description>This feed contains news articles related to mental health awareness and resources.</description>
         <language>en-us</language>
 
         <item>
