@@ -305,11 +305,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
     text-align: left; /* Left-align text */
 }
-.text-container > * {
-    margin: 0; /* Reset any margins on child elements */
-    padding: 0; /* Reset any padding on child elements */
-}
-        
+
 .block-container {
     display: flex;
     gap: 10px; /* 10px margin between the blocks */
@@ -325,7 +321,11 @@
     padding: 10px; /* Padding inside the block */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
-
+.block-left > * {
+    margin: 0; /* Reset any margins on child elements */
+    padding: 0; /* Reset any padding on child elements */
+}
+        
 .block-right {
     width: 35%; /* Set width to 35% */
     height: 300px; /* Fixed height */
