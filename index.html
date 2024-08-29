@@ -294,53 +294,32 @@
         }
 
         /* Custom Text Container */
-      .text-container {
-    width: 75%; /* Matches the width of the carousel */
-    margin: 20px auto; /* Center the container with auto margins */
-    background-color: #f7f7f7; /* Light grey background for contrast */
-    color: #000; /* Text color */
-    padding: 10px; /* Add padding inside the container */
-    box-sizing: border-box; /* Include padding in the height/width */
-    border-radius: 5px; /* Optional: Add border radius */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-    text-align: left; /* Left-align text */
+   .text-container {
+    padding: 0 !important; /* Remove any extra padding */
+    margin: 0; /* Ensure no extra margin is added */
 }
 
-.block-container {
-    display: flex;
-    gap: 10px; /* 10px margin between the blocks */
-    margin-bottom: 10px; /* Margin below the side-by-side blocks */
+.block {
+    background-color: #f7f7f7; /* Light grey background for the blocks */
+    border: 1px solid #ddd; /* Optional: Light border */
+    margin-bottom: 10px; /* Space between blocks */
+    margin-top: 0; /* Reset margin at the top of each block */
+    padding: 10px; /* Consistent padding inside each block */
 }
 
-.block-left {
-    width: 65%; /* Set width to 65% */
-    height: 300px; /* Fixed height */
-    background-color: #ffffff; /* Optional: Set a different background color */
-    border-radius: 5px; /* Optional: Add border radius */
-    box-sizing: border-box; /* Include padding in height/width */
-    padding: 10px; /* Padding inside the block */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+.left-block, .right-block {
+    padding: 0; /* Ensure no extra padding */
+    margin: 0; /* Remove margin around individual blocks */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }
 
-.block-right {
-    width: 35%; /* Set width to 35% */
-    height: 300px; /* Fixed height */
-    background-color: #ffffff; /* Optional: Set a different background color */
-    border-radius: 5px; /* Optional: Add border radius */
-    box-sizing: border-box; /* Include padding in height/width */
-    padding: 10px; /* Padding inside the block */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+.full-block {
+    width: 100%; /* Full width for the bottom block */
+    padding: 0; /* Ensure no extra padding */
+    margin: 10px 0; /* Add top and bottom margin for separation */
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
-.block-full {
-    width: 100%; /* Full width of the container */
-    background-color: #ffffff; /* Optional: Set a different background color */
-    border-radius: 5px; /* Optional: Add border radius */
-    box-sizing: border-box; /* Include padding in height/width */
-    padding: 10px; /* Padding inside the block */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-    margin-top: 10px; /* Margin above the full-width block */
-}
 
 
         footer {
@@ -468,25 +447,18 @@
         </div>
     </div>
     <!-- Custom Text Container -->
- <section class="text-container">
-    <!-- Side-by-Side Blocks -->
-    <div class="block-container">
-        <div class="block-left">
-            <!-- Content for the left block -->
-            <p>Content for the left block goes here...</p>
-        </div>
-        <div class="block-right">
-            <!-- Content for the right block -->
-            <p>Content for the right block goes here...</p>
-        </div>
+<section class="text-container">
+    <div class="block left-block">
+        <!-- Content for the left block -->
     </div>
-
-    <!-- Full-Width Block -->
-    <div class="block-full">
+    <div class="block right-block">
+        <!-- Content for the right block -->
+    </div>
+    <div class="block full-block">
         <!-- Content for the full-width block -->
-        <p>Content for the full-width block goes here...</p>
     </div>
 </section>
+
 
 
 </main>
