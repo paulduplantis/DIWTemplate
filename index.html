@@ -294,62 +294,64 @@
         }
 
         /* Custom Text Container */
-.text-container {
-    padding: 0 !important; /* Remove any extra padding */
-    margin: 0; /* Ensure no extra margin is added */
+  .text-container {
+    width: 75%; /* Matches the width of the carousel */
+    margin: 20px auto; /* Center the container with auto margins */
+    background-color: #f7f7f7; /* Light grey background for contrast */
+    color: #000; /* Text color */
+    padding: 10px; /* Add padding inside the container */
+    box-sizing: border-box; /* Include padding in the height/width */
+    border-radius: 5px; /* Optional: Add border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    text-align: left; /* Left-align text */
 }
 
-.block {
-    background-color: #f7f7f7; /* Light grey background for the blocks */
-    border: 1px solid #ddd; /* Optional: Light border */
-    margin-bottom: 10px; /* Space between blocks */
-    margin-top: 0; /* Reset margin at the top of each block */
-    padding: 10px; /* Consistent padding inside each block */
+.block-container {
+    display: flex;
+    gap: 10px; /* 10px margin between the blocks */
+    margin-bottom: 10px; /* Margin below the side-by-side blocks */
 }
 
-/* Individual styles for left and right blocks */
-.left-block {
-    width: 65%; /* Default width for the left block */
-    height: 300px; /* Set the height for the left block */
-    padding: 0; /* Ensure no extra padding */
-    margin: 0; /* Remove margin around individual blocks */
-    box-sizing: border-box; /* Include padding and border in width */
-    float: left; /* Align to the left */
+.block-left {
+    width: 65%; /* Set width to 65% */
+    height: 300px; /* Fixed height */
+    background-color: #ffffff; /* Optional: Set a different background color */
+    border-radius: 5px; /* Optional: Add border radius */
+    box-sizing: border-box; /* Include padding in height/width */
+    padding: 10px; /* Padding inside the block */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
 .block-left > * {
     margin: 0; /* Reset any margins on child elements */
     padding: 0; /* Reset any padding on child elements */
-
-}       
-
-.right-block {
-    width: 35%; /* Default width for the right block */
-    height: 300px; /* Set the height for the right block */
-    padding: 0; /* Ensure no extra padding */
-    margin-left: 10px; /* Space between left and right blocks */
-    box-sizing: border-box; /* Include padding and border in width */
-    float: left; /* Align to the left */
+}   
+.block-right {
+    width: 35%; /* Set width to 35% */
+    height: 300px; /* Fixed height */
+    background-color: #ffffff; /* Optional: Set a different background color */
+    border-radius: 5px; /* Optional: Add border radius */
+    box-sizing: border-box; /* Include padding in height/width */
+    padding: 10px; /* Padding inside the block */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
-
 .block-right > * {
     margin: 0; /* Reset any margins on child elements */
     padding: 0; /* Reset any padding on child elements */
-
 }
-        
-.full-block {
-    width: calc(100% - 20px); /* Full width for the bottom block, accounting for margins */
-    height: auto; /* Adjust height as needed */
-    padding: 0; /* Ensure no extra padding */
-    margin: 10px 0; /* Add top and bottom margin for separation */
-    box-sizing: border-box; /* Include padding and border in width */
-    clear: both; /* Clear floating elements above */
+.block-full {
+    width: 100%; /* Full width of the container */
+    background-color: #ffffff; /* Optional: Set a different background color */
+    border-radius: 5px; /* Optional: Add border radius */
+    box-sizing: border-box; /* Include padding in height/width */
+    padding: 10px; /* Padding inside the block */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    margin-top: 10px; /* Margin above the full-width block */
 }
-
 .block-full > * {
     margin: 0; /* Reset any margins on child elements */
     padding: 0; /* Reset any padding on child elements */
-}     
+}
+
         footer {
             background-color: #668E95; /* Footer background color */
             color: #fff; /* Footer text color */
@@ -480,27 +482,18 @@
     <div class="block-container">
         <div class="block-left">
             <!-- Content for the left block -->
-            <p>My name is J. Paul Duplantis and I have been interested in the plight of those who have a difficult time navigating the noisy world we live in whether it is due to genetic, environmental or behavioral factors manifesting into anxiety, depression, mania, schizophrenia, bipolar, PTSD, autism, etc., etc.</p>
-                
-                <p>These manifestations often can result in homelessness, drug addiction, violence, and a loss of purpose, especially when those who suffer do not have a tight network of family and friends for support. Even those with the tightest network still suffer due to the overwhelming nature of….
-I created Pathways for Mental Health to share my story of </p>
-
-<p>Pathways for Mental Health supports individuals facing mental health challenges and those who care for them, offering guidance and resources for times of need. We believe the improvement of Mental Health across all of society should be the next moonshot driven not only by institutional directives but by governments, businesses, and especially by everyday people.</p>
-
-<p>Please note: Pathways for Mental Health is not operated by medical professionals. The information provided on this site is intended for general informational purposes only and should not be considered a substitute for professional medical advice, diagnosis, or treatment. Always seek the guidance of a qualified healthcare provider with any questions you may have regarding your mental health.</p>
-
-</p>
+            <p>Content for the left block goes here...</p>
         </div>
         <div class="block-right">
             <!-- Content for the right block -->
-            <p>Statement of site then Share to Care, Subscribe to learn, and submit article goes here. Under this add a stat relevant to the page.  </p>
+            <p>Content for the right block goes here...</p>
         </div>
     </div>
 
     <!-- Full-Width Block -->
     <div class="block-full">
         <!-- Content for the full-width block -->
-        <p>Directory of Providers goes here</p>
+        <p>Content for the full-width block goes here...</p>
     </div>
 </section>
 
