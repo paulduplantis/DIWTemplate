@@ -294,25 +294,54 @@
         }
 
         /* Custom Text Container */
-        .text-container {
-            width: 75%; /* Matches the width of the carousel */
-            margin: 20px auto; !important; /* Center the container with auto margins */
-            height: 2000px; /* Set the height to 2000px */
-            background-color: #fff; /* Light grey background for contrast */
-            color: #000; /* Text color */
-            padding: 10px !important;
-            box-sizing: border-box; /* Include padding in the height/width */
-            border-radius: 5px; /* Optional: Add border radius */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-            text-align: left; /* Left-align text */
-            font-family: Arial, sans-serif;
-            font-size: 1em;
-        }
-           .text-container > * {
-            margin: 0; /* Reset any margins on child elements */
-            padding: 0; /* Reset any padding on child elements */
-        }
-        
+      .text-container {
+    width: 75%; /* Matches the width of the carousel */
+    margin: 20px auto; /* Center the container with auto margins */
+    background-color: #f7f7f7; /* Light grey background for contrast */
+    color: #000; /* Text color */
+    padding: 10px; /* Add padding inside the container */
+    box-sizing: border-box; /* Include padding in the height/width */
+    border-radius: 5px; /* Optional: Add border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    text-align: left; /* Left-align text */
+}
+
+.block-container {
+    display: flex;
+    gap: 10px; /* 10px margin between the blocks */
+    margin-bottom: 10px; /* Margin below the side-by-side blocks */
+}
+
+.block-left {
+    width: 65%; /* Set width to 65% */
+    height: 300px; /* Fixed height */
+    background-color: #ffffff; /* Optional: Set a different background color */
+    border-radius: 5px; /* Optional: Add border radius */
+    box-sizing: border-box; /* Include padding in height/width */
+    padding: 10px; /* Padding inside the block */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.block-right {
+    width: 35%; /* Set width to 35% */
+    height: 300px; /* Fixed height */
+    background-color: #ffffff; /* Optional: Set a different background color */
+    border-radius: 5px; /* Optional: Add border radius */
+    box-sizing: border-box; /* Include padding in height/width */
+    padding: 10px; /* Padding inside the block */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.block-full {
+    width: 100%; /* Full width of the container */
+    background-color: #ffffff; /* Optional: Set a different background color */
+    border-radius: 5px; /* Optional: Add border radius */
+    box-sizing: border-box; /* Include padding in height/width */
+    padding: 10px; /* Padding inside the block */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    margin-top: 10px; /* Margin above the full-width block */
+}
+
 
         footer {
             background-color: #668E95; /* Footer background color */
@@ -439,22 +468,26 @@
         </div>
     </div>
     <!-- Custom Text Container -->
-    <section class="text-container">
-          <p style="font-size: 1em; font-family: Arial, sans-serif;">My name is J. Paul Duplantis and I have been interested in the plight of those who have a difficult time navigating the noisy world we live in whether it is due to genetic, environmental or behavioral factors manifesting into anxiety, depression, mania, schizophrenia, bipolar, PTSD, autism, etc., etc. These manifestations often can result in homelessness, drug addiction, violence, and a loss of purpose, especially when those who suffer do not have a tight network of family and friends for support. Even those with the tightest network still suffer due to the overwhelming nature of….
+ <section class="text-container">
+    <!-- Side-by-Side Blocks -->
+    <div class="block-container">
+        <div class="block-left">
+            <!-- Content for the left block -->
+            <p>Content for the left block goes here...</p>
+        </div>
+        <div class="block-right">
+            <!-- Content for the right block -->
+            <p>Content for the right block goes here...</p>
+        </div>
+    </div>
 
-I created Pathways for Mental Health to share my story of 
+    <!-- Full-Width Block -->
+    <div class="block-full">
+        <!-- Content for the full-width block -->
+        <p>Content for the full-width block goes here...</p>
+    </div>
+</section>
 
-Pathways for Mental Health supports individuals facing mental health challenges and those who care for them, offering guidance and resources for times of need. We believe the improvement of Mental Health across all of society should be the next moonshot driven not only by institutional directives but by governments, businesses, and especially by everyday people.
- </p>
-        
-        <p style="font-size: 0.9em; font-style: italic;">Please note: Pathways for Mental Health is not operated by medical professionals. The information provided on this site is intended for general informational purposes only and should not be considered a substitute for professional medical advice, diagnosis, or treatment. Always seek the guidance of a qualified healthcare provider with any questions you may have regarding your mental health.  
-
-</p>
-      
-       
-    
-        <!-- Add more content as needed -->
-    </section>
 
 </main>
 
