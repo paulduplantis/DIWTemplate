@@ -321,7 +321,7 @@
 }
 
 .block-left {
-    width: 60%; /* Set width to 65% */
+    width: 65%; /* Set width to 65% */
     height: 300px; /* Fixed height */
     background-color: #ffffff; /* Optional: Set a different background color */
     border-radius: 5px; /* Optional: Add border radius */
@@ -334,69 +334,18 @@
     padding: 0; /* Reset any padding on child elements */
 }   
 .block-right {
-    width: 35%; /* Default width for the right block */
-    height: auto; /* Let the height adjust based on content */
-    padding: 10px; /* Add padding inside the block */
-    margin-left: 10px; /* Space between left and right blocks */
-    box-sizing: border-box; /* Include padding and border in width */
-    float: left; /* Align to the left */
+    width: 35%; /* Set width to 35% */
+    height: 300px; /* Fixed height */
+    background-color: #ffffff; /* Optional: Set a different background color */
+    border-radius: 5px; /* Optional: Add border radius */
+    box-sizing: border-box; /* Include padding in height/width */
+    padding: 10px; /* Padding inside the block */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
-
 .block-right > * {
-    margin: 10px 0; /* Space between sections inside the right block */
+    margin: 0; /* Reset any margins on child elements */
+    padding: 0; /* Reset any padding on child elements */
 }
-
-.share-section,
-.subscribe-section {
-    padding: 10px; /* Add padding around content */
-    text-align: left; /* Align text to the left */
-}
-
-.share-section span,
-.subscribe-section span {
-    display: block; /* Display text above icons */
-    font-size: 1.2em; /* Adjust font size */
-    margin-bottom: 5px; /* Add space below text */
-}
-
-.share-section a,
-.subscribe-section a {
-    margin: 0 5px; /* Space between icons */
-}
-
-.share-section img,
-.subscribe-section img {
-    width: 30px;
-    height: 30px;
-}
-
-.submit-article {
-    display: block;
-    background-color: #f0f0f0; /* Background color for "Submit an Article" */
-    padding: 10px; /* Padding around text */
-    margin-top: 20px; /* Space above the link */
-    text-align: center; /* Center the text */
-    color: #000; /* Text color */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
-}
-
-.image-container {
-    margin-top: 20px; /* Space above the image */
-    width: 100%; /* Full width of the block */
-    height: 200px; /* Set height for the image */
-    overflow: hidden; /* Hide overflow */
-    text-align: center; /* Center the image */
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the container */
-}
-
-
-        
 .block-full {
     width: 100%; /* Full width of the container */
     background-color: #ffffff; /* Optional: Set a different background color */
@@ -537,181 +486,23 @@
     </div>
     <!-- Custom Text Container -->
 <section class="text-container">
-    <div class="block-left">
-        <!-- Content for the left block goes here -->
-        <p>Your content for the left block...</p>
-    </div>
-
-    <div class="block-right">
-        <!-- Share to Care Section -->
-        <div class="share-section">
-            <span>Share to Care!</span>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-            </a>
-            <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site&url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                <img src="https://paulduplantis.github.io/DIWTemplate/x_logo.png" alt="X">
-            </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
-            </a>
-            <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
-            </a>
+    <!-- Side-by-Side Blocks -->
+    <div class="block-container">
+        <div class="block-left">
+            <!-- Content for the left block -->
+            <p>My name is J. Paul Duplantis and I have been interested in the plight of those who have a difficult time navigating the noisy world we live in whether it is due to genetic, environmental or behavioral factors manifesting into anxiety, depression, mania, schizophrenia, bipolar, PTSD, autism, etc., etc. These manifestations often can result in homelessness, drug addiction, violence, and a loss of purpose, especially when those who suffer do not have a tight network of family and friends for support.Even those with the tightest network still suffer due to the overwhelming nature of….
+</p><p>I created Pathways for Mental Health to share my story of ……Pathways for Mental Health supports individuals facing mental health challenges and those who care for them, offering guidance and resources for times of need. We believe the improvement of Mental Health across all of society should be the next moonshot driven not only by institutional directives but by governments, businesses, and especially by everyday people.
+</p>
         </div>
-
-        <!-- Subscribe to Learn Section -->
-        <div class="subscribe-section">
-            <span>Subscribe to Learn</span>
-            <a href="http://www.testrssfeed.com" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
-            </a>
-            <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
-                <img src="https://paulduplantis.github.io/DIWTemplate/email-subscription.png" alt="Email">
-            </a>
-        </div>
-
-        <!-- Submit an Article Link -->
-        <a href="https://www.test.com" class="submit-article">Submit an Article</a>
-
-        <!-- Image Placeholder -->
-        <div class="image-container">
-            <img src="https://via.placeholder.com/300" alt="Sample Image">
+        <div class="block-right">
+            <!-- Content for the right block -->
+            <p>*This is a Deep Inquiry website. No logins. No cookies. No tracking. No popups. No ads. Just deep inquiry. Lean more...... declaration, Share to Care, Subscribe to learn and stats go here</p>
         </div>
     </div>
 
+    <!-- Full-Width Block -->
     <div class="block-full">
-        <!-- Content for the full block goes here -->
-        <p>Your content for the full block...</p>
+        <!-- Content for the full-width block -->
+        <p>Provider directory goes here</p>
     </div>
 </section>
-
-
-
-
-</main>
-
-<footer>
-    <p>To help with funding to promote this message to the St. Augustine, Florida community, contact: paulduplantis@gmail.com</p>
-    <p>To access the GitHub Repository to copy code and extend this message, visit <a href="https://github.com/paulduplantis/DIWTemplate" target="_blank">https://github.com/paulduplantis/DIWTemplate</a></p>
-    <p>Build and share to inspire mental health awareness, access to resources, and volunteerism.</p>
-    <p><a href="about.html">About</a></p>
-</footer>
-
-<script>
-    // Array of Mental Health Messages with headers
-    const mentalHealthMessages = [
-        {
-            header: "DEPRESSION",
-            message: "How can depression lead to homelessness? What are the common symptoms of depression? How can you get help with depression? How can you help in your community?"
-        },
-        {
-            header: "Anxiety Resources",
-            message: "It's okay to ask for help: Resources available for Anxiety"
-        },
-        {
-            header: "Stress Management",
-            message: "Support your mental well-being: Tips for managing stress"
-        },
-        // Add more messages as needed
-    ];
-
-    async function fetchFeed(feedUrl, containerId, excludedTitle) {
-        try {
-            const response = await fetch(feedUrl);
-            if (!response.ok) {
-                console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
-                return;
-            }
-            const text = await response.text();
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(text, 'application/xml');
-            let items = Array.from(xml.querySelectorAll('item'));
-
-            // Reverse the items to show oldest first
-            items.reverse();
-
-            const carouselInner = document.getElementById(containerId);
-            if (items.length === 0) {
-                console.warn('No RSS feed items found.');
-                return;
-            }
-
-            let messageIndex = 0;
-            items.forEach((item, index) => {
-                // Insert Mental Health Message every 3rd item
-                if (index > 0 && index % 3 === 0) {
-                    const message = mentalHealthMessages[messageIndex];
-                    const messageElement = document.createElement('div');
-                    messageElement.classList.add('carousel-item', 'mental-health-message');
-                    messageElement.innerHTML = `
-                        <div class="rss-item">
-                            <h3>${message.header}</h3>
-                            <p>${message.message}</p>
-                        </div>
-                    `;
-                    carouselInner.appendChild(messageElement);
-
-                    // Cycle through messages
-                    messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
-                }
-
-                // Normal RSS Feed Item
-                const title = item.querySelector('title').textContent;
-                if (title === excludedTitle) {
-                    return; // Skip this item
-                }
-                const link = item.querySelector('link').textContent;
-                const description = item.querySelector('description').textContent;
-
-                // Fetch the image URL from the enclosure or custom tag
-                const enclosure = item.querySelector('enclosure');
-                const imageUrl = enclosure ? enclosure.getAttribute('url') : 'https://via.placeholder.com/300x150';
-
-                const carouselItem = document.createElement('div');
-                carouselItem.classList.add('carousel-item');
-                carouselItem.innerHTML = `
-                    <img src="${imageUrl}" alt="Article Image">
-                    <div class="rss-item">
-                        <h3>${title}</h3>
-                        <p>${description}</p>
-                        <a href="${link}" target="_blank">Read More</a>
-                    </div>
-                `;
-                carouselInner.appendChild(carouselItem);
-            });
-        } catch (error) {
-            console.error('Error fetching or parsing RSS feed:', error);
-        }
-    }
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-        fetchFeed('https://paulduplantis.github.io/DIWTemplate/news-rss-feed.xml', 'carousel-inner-news', '');
-    });
-
-    // Add custom CSS for the mental health message boxes
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .mental-health-message {
-            background-color: #000; /* Light grey background */
-            color: #333; /* Darker text color */
-            font-family: Arial, sans-serif; /* Font style */
-            font-size: 1em; /* Font size */
-        }
-
-        .mental-health-message h3 {
-            font-size: 1.2em; /* Slightly larger font for the title */
-            color: #fff; /* Title color */
-        }
-
-        .mental-health-message p {
-            font-size: 1em; /* Font size for the paragraph */
-            color: #fff; /* Text color for the paragraph */
-        }
-    `;
-    document.head.appendChild(style);
-</script>
-
-</body>
-</html>
