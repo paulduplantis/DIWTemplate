@@ -506,3 +506,132 @@
         <p>Provider directory goes here</p>
     </div>
 </section>
+
+
+
+</main>
+
+<footer>
+    <p>To help with funding to promote this message to the St. Augustine, Florida community, contact: paulduplantis@gmail.com</p>
+    <p>To access the GitHub Repository to copy code and extend this message, visit <a href="https://github.com/paulduplantis/DIWTemplate" target="_blank">https://github.com/paulduplantis/DIWTemplate</a></p>
+    <p>Build and share to inspire mental health awareness, access to resources, and volunteerism.</p>
+    <p><a href="about.html">About</a></p>
+</footer>
+
+<script>
+    // Array of Mental Health Messages with headers
+    const mentalHealthMessages = [
+        {
+            header: "DEPRESSION",
+            message: "How can depression lead to homelessness? What are the common symptoms of depression? How can you get help with depression? How can you help in your community?"
+        },
+        {
+            header: "Anxiety Resources",
+            message: "It's okay to ask for help: Resources available for Anxiety"
+        },
+        {
+            header: "Stress Management",
+            message: "Support your mental well-being: Tips for managing stress"
+        },
+        // Add more messages as needed
+    ];
+
+    async function fetchFeed(feedUrl, containerId, excludedTitle) {
+        try {
+            const response = await fetch(feedUrl);
+            if (!response.ok) {
+                console.error('Failed to fetch the RSS feed:', response.status, response.statusText);
+                return;
+            }
+            const text = await response.text();
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, 'application/xml');
+            let items = Array.from(xml.querySelectorAll('item'));
+
+            // Reverse the items to show oldest first
+            items.reverse();
+
+            const carouselInner = document.getElementById(containerId);
+            if (items.length === 0) {
+                console.warn('No RSS feed items found.');
+                return;
+            }
+
+            let messageIndex = 0;
+            items.forEach((item, index) => {
+                // Insert Mental Health Message every 3rd item
+                if (index > 0 && index % 3 === 0) {
+                    const message = mentalHealthMessages[messageIndex];
+                    const messageElement = document.createElement('div');
+                    messageElement.classList.add('carousel-item', 'mental-health-message');
+                    messageElement.innerHTML = `
+                        <div class="rss-item">
+                            <h3>${message.header}</h3>
+                            <p>${message.message}</p>
+                        </div>
+                    `;
+                    carouselInner.appendChild(messageElement);
+
+                    // Cycle through messages
+                    messageIndex = (messageIndex + 1) % mentalHealthMessages.length;
+                }
+
+                // Normal RSS Feed Item
+                const title = item.querySelector('title').textContent;
+                if (title === excludedTitle) {
+                    return; // Skip this item
+                }
+                const link = item.querySelector('link').textContent;
+                const description = item.querySelector('description').textContent;
+
+                // Fetch the image URL from the enclosure or custom tag
+                const enclosure = item.querySelector('enclosure');
+                const imageUrl = enclosure ? enclosure.getAttribute('url') : 'https://via.placeholder.com/300x150';
+
+                const carouselItem = document.createElement('div');
+                carouselItem.classList.add('carousel-item');
+                carouselItem.innerHTML = `
+                    <img src="${imageUrl}" alt="Article Image">
+                    <div class="rss-item">
+                        <h3>${title}</h3>
+                        <p>${description}</p>
+                        <a href="${link}" target="_blank">Read More</a>
+                    </div>
+                `;
+                carouselInner.appendChild(carouselItem);
+            });
+        } catch (error) {
+            console.error('Error fetching or parsing RSS feed:', error);
+        }
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchFeed('https://paulduplantis.github.io/DIWTemplate/news-rss-feed.xml', 'carousel-inner-news', '');
+    });
+
+    // Add custom CSS for the mental health message boxes
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .mental-health-message {
+            background-color: #000; /* Light grey background */
+            color: #333; /* Darker text color */
+            font-family: Arial, sans-serif; /* Font style */
+            font-size: 1em; /* Font size */
+        }
+
+        .mental-health-message h3 {
+            font-size: 1.2em; /* Slightly larger font for the title */
+            color: #fff; /* Title color */
+        }
+
+        .mental-health-message p {
+            font-size: 1em; /* Font size for the paragraph */
+            color: #fff; /* Text color for the paragraph */
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+
+</body>
+</html>
