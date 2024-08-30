@@ -302,64 +302,117 @@
         }
 
         /* Custom Text Container */
-  .text-container {
-    width: 75%; /* Matches the width of the carousel */
-    margin: 20px auto; /* Center the container with auto margins */
-    background-color: #f7f7f7; /* Light grey background for contrast */
-    color: #000; /* Text color */
-    padding: 10px; /* Add padding inside the container */
-    box-sizing: border-box; /* Include padding in the height/width */
-    border-radius: 5px; /* Optional: Add border radius */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-    text-align: left; /* Left-align text */
+.text-container {
+    padding: 0 !important; /* Remove any extra padding */
+    margin: 0; /* Ensure no extra margin is added */
 }
 
-.block-container {
-    display: flex;
-    gap: 10px; /* 10px margin between the blocks */
-    margin-bottom: 10px; /* Margin below the side-by-side blocks */
+/* General Block Styles */
+.block {
+    background-color: #f7f7f7; /* Light grey background for the blocks */
+    border: 1px solid #ddd; /* Optional: Light border */
+    margin-bottom: 10px; /* Space between blocks */
+    margin-top: 0; /* Reset margin at the top of each block */
+    padding: 10px; /* Consistent padding inside each block */
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
+/* Left Block Styles */
 .block-left {
-    width: 65%; /* Set width to 65% */
-    height: 300px; /* Fixed height */
-    background-color: #ffffff; /* Optional: Set a different background color */
-    border-radius: 5px; /* Optional: Add border radius */
-    box-sizing: border-box; /* Include padding in height/width */
-    padding: 10px; /* Padding inside the block */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    width: 65%; /* Default width for the left block */
+    height: 300px; /* Set the height for the left block */
+    padding: 0; /* Ensure no extra padding */
+    margin: 0; /* Remove margin around individual blocks */
+    float: left; /* Align to the left */
 }
+
 .block-left > * {
     margin: 0; /* Reset any margins on child elements */
     padding: 0; /* Reset any padding on child elements */
-}   
+}
+
+/* Right Block Styles */
 .block-right {
-    width: 35%; /* Set width to 35% */
-    height: 300px; /* Fixed height */
-    background-color: #ffffff; /* Optional: Set a different background color */
-    border-radius: 5px; /* Optional: Add border radius */
-    box-sizing: border-box; /* Include padding in height/width */
-    padding: 10px; /* Padding inside the block */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    width: 35%; /* Default width for the right block */
+    height: auto; /* Let the height adjust based on content */
+    padding: 10px; /* Add padding inside the block */
+    margin-left: 10px; /* Space between left and right blocks */
+    box-sizing: border-box; /* Include padding and border in width */
+    float: left; /* Align to the left */
 }
+
 .block-right > * {
-    margin: 0; /* Reset any margins on child elements */
-    padding: 0; /* Reset any padding on child elements */
+    margin: 10px 0; /* Space between sections inside the right block */
 }
+
+/* Share to Care and Subscribe to Learn Sections */
+.share-section,
+.subscribe-section {
+    padding: 10px; /* Add padding around content */
+    text-align: left; /* Align text to the left */
+}
+
+.share-section span,
+.subscribe-section span {
+    display: block; /* Display text above icons */
+    font-size: 1.2em; /* Adjust font size */
+    margin-bottom: 5px; /* Add space below text */
+}
+
+.share-section a,
+.subscribe-section a {
+    margin: 0 5px; /* Space between icons */
+}
+
+.share-section img,
+.subscribe-section img {
+    width: 30px; /* Set icon size */
+    height: 30px; /* Set icon size */
+}
+
+/* Submit an Article Link */
+.submit-article {
+    display: block; /* Display as a block element */
+    background-color: #f0f0f0; /* Background color for "Submit an Article" */
+    padding: 10px; /* Padding around text */
+    margin-top: 20px; /* Space above the link */
+    text-align: center; /* Center the text */
+    color: #000; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+}
+
+/* Image Container in Right Block */
+.image-container {
+    margin-top: 20px; /* Space above the image */
+    width: 100%; /* Full width of the block */
+    height: 200px; /* Set height for the image */
+    overflow: hidden; /* Hide overflow */
+    text-align: center; /* Center the image */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+}
+
+/* Full Block Styles */
 .block-full {
-    width: 100%; /* Full width of the container */
-    background-color: #ffffff; /* Optional: Set a different background color */
-    border-radius: 5px; /* Optional: Add border radius */
-    box-sizing: border-box; /* Include padding in height/width */
-    padding: 10px; /* Padding inside the block */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-    margin-top: 10px; /* Margin above the full-width block */
+    width: calc(100% - 20px); /* Full width for the bottom block, accounting for margins */
+    height: auto; /* Adjust height as needed */
+    padding: 0; /* Ensure no extra padding */
+    margin: 10px 0; /* Add top and bottom margin for separation */
+    clear: both; /* Clear floating elements above */
 }
+
 .block-full > * {
     margin: 0; /* Reset any margins on child elements */
     padding: 0; /* Reset any padding on child elements */
 }
 
+
+        
         footer {
             background-color: #668E95; /* Footer background color */
             color: #fff; /* Footer text color */
@@ -486,26 +539,55 @@
     </div>
     <!-- Custom Text Container -->
 <section class="text-container">
-    <!-- Side-by-Side Blocks -->
-    <div class="block-container">
-        <div class="block-left">
-            <!-- Content for the left block -->
-            <p>My name is J. Paul Duplantis and I have been interested in the plight of those who have a difficult time navigating the noisy world we live in whether it is due to genetic, environmental or behavioral factors manifesting into anxiety, depression, mania, schizophrenia, bipolar, PTSD, autism, etc., etc. These manifestations often can result in homelessness, drug addiction, violence, and a loss of purpose, especially when those who suffer do not have a tight network of family and friends for support.Even those with the tightest network still suffer due to the overwhelming nature of….
-</p><p>I created Pathways for Mental Health to share my story of ……Pathways for Mental Health supports individuals facing mental health challenges and those who care for them, offering guidance and resources for times of need. We believe the improvement of Mental Health across all of society should be the next moonshot driven not only by institutional directives but by governments, businesses, and especially by everyday people.
-</p>
+    <div class="block-left">
+        <!-- Content for the left block goes here -->
+        <p>Your content for the left block...</p>
+    </div>
+
+    <div class="block-right">
+        <!-- Share to Care Section -->
+        <div class="share-section">
+            <span>Share to Care!</span>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site&url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+                <img src="https://paulduplantis.github.io/DIWTemplate/x_logo.png" alt="X">
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
+            </a>
+            <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+            </a>
         </div>
-        <div class="block-right">
-            <!-- Content for the right block -->
-            <p>*This is a Deep Inquiry website. No logins. No cookies. No tracking. No popups. No ads. Just deep inquiry. Lean more...... declaration, Share to Care, Subscribe to learn and stats go here</p>
+
+        <!-- Subscribe to Learn Section -->
+        <div class="subscribe-section">
+            <span>Subscribe to Learn</span>
+            <a href="http://www.testrssfeed.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS">
+            </a>
+            <a href="mailto:subscribe@yourwebsite.com?subject=Subscribe&body=Please%20subscribe%20me%20to%20your%20newsletter" target="_blank">
+                <img src="https://paulduplantis.github.io/DIWTemplate/email-subscription.png" alt="Email">
+            </a>
+        </div>
+
+        <!-- Submit an Article Link -->
+        <a href="https://www.test.com" class="submit-article">Submit an Article</a>
+
+        <!-- Image Placeholder -->
+        <div class="image-container">
+            <img src="https://via.placeholder.com/300" alt="Sample Image">
         </div>
     </div>
 
-    <!-- Full-Width Block -->
     <div class="block-full">
-        <!-- Content for the full-width block -->
-        <p>Provider directory goes here</p>
+        <!-- Content for the full block goes here -->
+        <p>Your content for the full block...</p>
     </div>
 </section>
+
 
 
 
