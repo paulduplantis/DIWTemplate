@@ -342,16 +342,19 @@
             color: #808080; /* Font color to gray */
             font-family: 'Arial', sans-serif; /* Font family */
             flex-grow: 1; /* Allow block to grow */
+            flex-shrink: 1; /* Allow to shrink */
         }
 
         .block-right {
             width: 30%; /* Set width to 30% */
+            max-width: 350px; /* Maximum width to prevent excessive stretching */
             background-color: #ffffff; /* Background color */
             border-radius: 5px; /* Border radius */
             box-sizing: border-box; /* Include padding in height/width */
             padding: 10px; /* Padding inside the block */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             flex-grow: 1; /* Allow block to grow */
+            flex-shrink: 1; /* Allow to shrink */
         }
 
         .block-left>*,
