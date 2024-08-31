@@ -326,19 +326,36 @@
             margin-bottom: 10px; /* Margin below the side-by-side blocks */
         }
 
-        .block-left {
-            width: 70%; /* Set width to 70% */
-            height: 550px; /* Fixed height */
-            background-color: #ffffff; /* Optional: Set a different background color */
-            border-radius: 5px; /* Optional: Add border radius */
-            box-sizing: border-box; /* Include padding in height/width */
-            padding: 10px; /* Padding inside the block */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-            font-size: 1.4em;
-            color: #636363; /* Corrected: Set font color to gray */
-            font-family: 'Arial', sans-serif;
-          
-        }
+       .block-left {
+    width: 70%; /* Set width to 70% */
+    max-width: 600px; /* Optional: Set a maximum width for better control */
+    height: auto; /* Remove fixed height for more flexibility */
+    background-color: #ffffff; /* Optional: Set a different background color */
+    border-radius: 5px; /* Optional: Add border radius */
+    box-sizing: border-box; /* Include padding in height/width */
+    padding: 10px; /* Padding inside the block */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    font-size: 1.4rem; /* Use rem for a more responsive font size */
+    color: #808080; /* Set font color to gray */
+    font-family: 'Arial', sans-serif; /* Font family */
+}
+
+/* Example of using media queries to adjust styles on smaller screens */
+@media (max-width: 768px) { /* Adjust styles for tablets and smaller screens */
+    .block-left {
+        width: 90%; /* Adjust width for smaller screens */
+        font-size: 1.2rem; /* Reduce font size slightly for better readability */
+        padding: 15px; /* Adjust padding for a more balanced layout */
+    }
+}
+
+@media (max-width: 480px) { /* Adjust styles for mobile devices */
+    .block-left {
+        width: 100%; /* Make full width on very small screens */
+        font-size: 1rem; /* Reduce font size further */
+        padding: 20px; /* Increase padding for touch-friendly design */
+    }
+}
 
         .block-left>* {
             margin: 0; /* Reset any margins on child elements */
