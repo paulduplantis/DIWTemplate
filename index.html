@@ -321,18 +321,17 @@
         }
 
         .block-container {
-            display: flex;
-            gap: 10px; /* 10px margin between the blocks */
+            display: flex; /* Flex display for side-by-side layout */
             margin-bottom: 10px; /* Margin below the side-by-side blocks */
-            justify-content: space-between; /* Ensure the blocks are spaced out */
+            justify-content: space-between; /* Space out blocks */
             flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            width: 100%; /* Ensure full width of the container */
+            width: 100%; /* Full width of the container */
         }
 
         .block-left {
-            width: 70%; /* Set width to 70% */
-            max-width: 600px; /* Set a maximum width for better control */
-            height: auto; /* Remove fixed height for more flexibility */
+            width: calc(70% - 10px); /* Base width minus margin */
+            max-width: 600px; /* Maximum width for better control */
+            height: auto; /* Flexible height */
             background-color: #ffffff; /* Background color */
             border-radius: 5px; /* Border radius */
             box-sizing: border-box; /* Include padding in height/width */
@@ -341,19 +340,20 @@
             font-size: 1.4rem; /* Responsive font size */
             color: #808080; /* Font color to gray */
             font-family: 'Arial', sans-serif; /* Font family */
-            flex-grow: 1; /* Allow block to grow */
+            flex-grow: 1; /* Allow to grow */
             flex-shrink: 1; /* Allow to shrink */
+            margin-right: 10px; /* Margin to separate from right block */
         }
 
         .block-right {
-            width: 30%; /* Set width to 30% */
+            width: 30%; /* Base width */
             max-width: 350px; /* Maximum width to prevent excessive stretching */
             background-color: #ffffff; /* Background color */
             border-radius: 5px; /* Border radius */
             box-sizing: border-box; /* Include padding in height/width */
             padding: 10px; /* Padding inside the block */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            flex-grow: 1; /* Allow block to grow */
+            flex-grow: 1; /* Allow to grow */
             flex-shrink: 1; /* Allow to shrink */
         }
 
@@ -488,6 +488,7 @@
                 max-width: none; /* Remove max-width */
                 padding: 15px; /* Adjust padding for better readability */
                 font-size: 1.2rem; /* Slightly smaller text */
+                margin-right: 0; /* Remove right margin */
             }
         }
 
@@ -502,6 +503,7 @@
                 max-width: none; /* Remove max-width */
                 padding: 20px; /* Increase padding for touch-friendly design */
                 font-size: 1rem; /* Smaller text for readability */
+                margin-right: 0; /* Remove right margin */
             }
 
             .block-left p,
