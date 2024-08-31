@@ -324,36 +324,37 @@
             display: flex;
             gap: 10px; /* 10px margin between the blocks */
             margin-bottom: 10px; /* Margin below the side-by-side blocks */
+            justify-content: space-between; /* Ensure the blocks are spaced out */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            width: 100%; /* Ensure full width of the container */
         }
 
         .block-left {
             width: 70%; /* Set width to 70% */
-            height: 550px; /* Fixed height */
-            background-color: #ffffff; /* Optional: Set a different background color */
-            border-radius: 5px; /* Optional: Add border radius */
+            max-width: 600px; /* Set a maximum width for better control */
+            height: auto; /* Remove fixed height for more flexibility */
+            background-color: #ffffff; /* Background color */
+            border-radius: 5px; /* Border radius */
             box-sizing: border-box; /* Include padding in height/width */
             padding: 10px; /* Padding inside the block */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-            font-size: 1.4em;
-            color: #636363; /* Corrected: Set font color to gray */
-            font-family: 'Arial', sans-serif;
-          
-        }
-
-        .block-left>* {
-            margin: 0; /* Reset any margins on child elements */
-            padding: 0; /* Reset any padding on child elements */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            font-size: 1.4rem; /* Responsive font size */
+            color: #808080; /* Font color to gray */
+            font-family: 'Arial', sans-serif; /* Font family */
+            flex-grow: 1; /* Allow block to grow */
         }
 
         .block-right {
             width: 30%; /* Set width to 30% */
-            background-color: #ffffff; /* Optional: Set a different background color */
-            border-radius: 5px; /* Optional: Add border radius */
+            background-color: #ffffff; /* Background color */
+            border-radius: 5px; /* Border radius */
             box-sizing: border-box; /* Include padding in height/width */
             padding: 10px; /* Padding inside the block */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            flex-grow: 1; /* Allow block to grow */
         }
 
+        .block-left>*,
         .block-right>* {
             margin: 0; /* Reset any margins on child elements */
             padding: 0; /* Reset any padding on child elements */
@@ -471,6 +472,56 @@
             font-size: 1em;
             color: #fff;
         }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) { /* Adjust styles for tablets and smaller screens */
+            .block-container {
+                flex-direction: column; /* Stack blocks vertically */
+            }
+
+            .block-left,
+            .block-right {
+                width: 100%; /* Full width for both blocks */
+                max-width: none; /* Remove max-width */
+                padding: 15px; /* Adjust padding for better readability */
+                font-size: 1.2rem; /* Slightly smaller text */
+            }
+        }
+
+        @media (max-width: 480px) { /* Adjust styles for mobile devices */
+            .block-container {
+                flex-direction: column; /* Stack blocks vertically */
+            }
+
+            .block-left,
+            .block-right {
+                width: 100%; /* Full width for both blocks */
+                max-width: none; /* Remove max-width */
+                padding: 20px; /* Increase padding for touch-friendly design */
+                font-size: 1rem; /* Smaller text for readability */
+            }
+
+            .block-left p,
+            .block-right p {
+                font-size: 1em; /* Adjust text size for mobile readability */
+            }
+
+            .submit-article {
+                padding: 15px; /* Increase padding for touch-friendly design */
+                font-size: 1.2em; /* Slightly larger text for buttons */
+            }
+
+            .image-container {
+                margin-top: 10px; /* Adjust spacing */
+                width: 100%; /* Full width of the block */
+                height: auto; /* Adjust height for better fitting */
+            }
+
+            .mental-health-message {
+                padding: 15px; /* Make padding consistent */
+                font-size: 0.9em; /* Adjust font size for better visibility */
+            }
+        }
     </style>
 </head>
 
@@ -480,8 +531,8 @@
         <div class="pathways-header">
             <h1>Pathways> for Mental Health</h1>
         </div>
-            </div>
-     <header>
+    </div>
+    <header>
         <nav>
             <ul>
                 <li><a href="Index.html">Home</a></li>
@@ -525,10 +576,10 @@
             <div class="block-container">
                 <div class="block-left">
                     <!-- Content for the left block -->
-              <p>A mental disorder refers to a wide range of mental health conditions that affect a person’s thinking, feeling, mood, or behavior that can lead to depression, anxiety disorders, bipolar disorder, schizophrenia, OCD, and PTSD. Without the proper support these disorders can lead to homelessness, drug and alcohol addiction, violence, loss of purpose and suicide.</p>
-<p>Whether support is through therapy, group therapy, medications, or a shoulder to lean on from a family member, friend or even a stranger, the road to a healthy mind from someone suffering from a disorder is a long and winding road with many obstacles at every turn.</p>
-<p>I argue mental health is the cornerstone of a healthier society but the ability to help is either misunderstood or hidden behind layers of bureaucracy and market forces. If you are someone who is either suffering yourself or care about someone who is, the mission of Pathways> for Mental Health is to illuminate the barriers, ideas, and resources that could lead toward a society where mental health is a priority more than a liability.</p>
-<p>~~~J. Paul Duplantis (Founder: Pathways> for Mental Health)</p>
+                    <p>A mental disorder refers to a wide range of mental health conditions that affect a person’s thinking, feeling, mood, or behavior that can lead to depression, anxiety disorders, bipolar disorder, schizophrenia, OCD, and PTSD. Without the proper support these disorders can lead to homelessness, drug and alcohol addiction, violence, loss of purpose and suicide.</p>
+                    <p>Whether support is through therapy, group therapy, medications, or a shoulder to lean on from a family member, friend or even a stranger, the road to a healthy mind from someone suffering from a disorder is a long and winding road with many obstacles at every turn.</p>
+                    <p>I argue mental health is the cornerstone of a healthier society but the ability to help is either misunderstood or hidden behind layers of bureaucracy and market forces. If you are someone who is either suffering yourself or care about someone who is, the mission of Pathways> for Mental Health is to illuminate the barriers, ideas, and resources that could lead toward a society where mental health is a priority more than a liability.</p>
+                    <p>~~~J. Paul Duplantis (Founder: Pathways> for Mental Health)</p>
                 </div>
                 <div class="block-right">
                     <!-- Content for the right block -->
@@ -546,11 +597,10 @@
                         <a href="mailto:?subject=Deep%20Inquiry&body=Check%20out%20this%20site%3A%20https%3A%2F%2Fpaulduplantis.github.io%2FDIWTemplate%2F" target="_blank">
                             <img src="https://paulduplantis.github.io/DIWTemplate/outlookemail.png" alt="Email" style="width: 30px; height: 30px;">
                         </a>
-                       <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/"
-                    target="_blank">
-                    <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
-                       </a>
-                        
+                        <a href="https://mail.google.com/mail/?view=cm&su=Deep%20Inquiry&body=Check%20out%20this%20site%20https://paulduplantis.github.io/DIWTemplate/"
+                            target="_blank">
+                            <img src="https://paulduplantis.github.io/DIWTemplate/gmail.png" alt="Gmail">
+                        </a>
                     </div>
                     <div class="subscribe-section">
                         <span>Subscribe to Learn</span>
@@ -699,5 +749,5 @@
     </script>
 
 </body>
-</html>
 
+</html>
